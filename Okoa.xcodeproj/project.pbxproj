@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DD7F157246A652F00991658 /* ColoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7F156246A652F00991658 /* ColoringViewController.swift */; };
+		2DD7F15B246AFFB000991658 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7F15A246AFFB000991658 /* CanvasView.swift */; };
 		AB88DAF72469859200243204 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88DAF62469859200243204 /* AppDelegate.swift */; };
 		AB88DAF92469859200243204 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88DAF82469859200243204 /* SceneDelegate.swift */; };
 		AB88DAFB2469859200243204 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB88DAFA2469859200243204 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DD7F156246A652F00991658 /* ColoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringViewController.swift; sourceTree = "<group>"; };
+		2DD7F15A246AFFB000991658 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		AB88DAF32469859200243204 /* Okoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Okoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB88DAF62469859200243204 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB88DAF82469859200243204 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				AB88DAFF2469859300243204 /* Assets.xcassets */,
 				AB88DB012469859300243204 /* LaunchScreen.storyboard */,
 				AB88DB042469859300243204 /* Info.plist */,
+				2DD7F156246A652F00991658 /* ColoringViewController.swift */,
+				2DD7F15A246AFFB000991658 /* CanvasView.swift */,
 			);
 			path = Okoa;
 			sourceTree = "<group>";
@@ -140,7 +146,9 @@
 			files = (
 				AB88DAFB2469859200243204 /* ViewController.swift in Sources */,
 				AB88DAF72469859200243204 /* AppDelegate.swift in Sources */,
+				2DD7F15B246AFFB000991658 /* CanvasView.swift in Sources */,
 				AB88DAF92469859200243204 /* SceneDelegate.swift in Sources */,
+				2DD7F157246A652F00991658 /* ColoringViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
