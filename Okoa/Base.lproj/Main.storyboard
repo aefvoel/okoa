@@ -195,11 +195,10 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6SC-HD-1lZ" customClass="CanvasView" customModule="Okoa" customModuleProvider="target">
-                                <rect key="frame" x="280" y="102" width="402" height="238"/>
+                            <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3N-Ug-W8l">
+                                <rect key="frame" x="245" y="115" width="405" height="239"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="J1f-2l-3R5"/>
@@ -207,7 +206,7 @@
                     <navigationItem key="navigationItem" id="Pbd-hm-CnS"/>
                     <connections>
                         <outlet property="backgroundView" destination="IJY-ZH-KmV" id="7yv-mT-ur5"/>
-                        <outlet property="canvasView" destination="6SC-HD-1lZ" id="k2k-OC-DCw"/>
+                        <outlet property="canvasView" destination="V3N-Ug-W8l" id="VWf-Bc-p1H"/>
                         <outlet property="collectionView" destination="cwb-DY-fWs" id="Bdb-mR-qV5"/>
                         <outlet property="sketchPlace" destination="g4N-OQ-9Or" id="ZOI-JJ-M3g"/>
                     </connections>

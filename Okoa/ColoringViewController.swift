@@ -27,6 +27,7 @@ class ColoringViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        canvasView.image = UIImage(named: "Anjing")
     }
     
     @IBAction func shuffleButton(_ sender: Any) {
@@ -63,10 +64,10 @@ extension ColoringViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath )
-        //if let view = cell.viewWithTag(1){
+        
         cell.contentView.backgroundColor = items[indexPath.row]
         cell.layer.cornerRadius = 20
-        //}
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
