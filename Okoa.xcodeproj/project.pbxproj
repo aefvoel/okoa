@@ -14,6 +14,8 @@
 		AB88DAFE2469859200243204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB88DAFC2469859200243204 /* Main.storyboard */; };
 		AB88DB002469859300243204 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB88DAFF2469859300243204 /* Assets.xcassets */; };
 		AB88DB032469859300243204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB88DB012469859300243204 /* LaunchScreen.storyboard */; };
+		D104A838246D40C600BC7E81 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D104A837246D40C600BC7E81 /* ResultViewController.swift */; };
+		D11452DD246D4C6D00095042 /* MyResources in Resources */ = {isa = PBXBuildFile; fileRef = D11452DC246D4C6D00095042 /* MyResources */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		AB88DAFF2469859300243204 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB88DB022469859300243204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB88DB042469859300243204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D104A837246D40C600BC7E81 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		D11452DC246D4C6D00095042 /* MyResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyResources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		AB88DAF52469859200243204 /* Okoa */ = {
 			isa = PBXGroup;
 			children = (
+				D11452DC246D4C6D00095042 /* MyResources */,
 				AB88DAF62469859200243204 /* AppDelegate.swift */,
 				AB88DAF82469859200243204 /* SceneDelegate.swift */,
 				AB88DAFC2469859200243204 /* Main.storyboard */,
@@ -66,6 +71,7 @@
 				AB88DB042469859300243204 /* Info.plist */,
 				2DD7F156246A652F00991658 /* ColoringViewController.swift */,
 				2DD7F15A246AFFB000991658 /* CanvasView.swift */,
+				D104A837246D40C600BC7E81 /* ResultViewController.swift */,
 			);
 			path = Okoa;
 			sourceTree = "<group>";
@@ -128,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D11452DD246D4C6D00095042 /* MyResources in Resources */,
 				AB88DB032469859300243204 /* LaunchScreen.storyboard in Resources */,
 				AB88DB002469859300243204 /* Assets.xcassets in Resources */,
 				AB88DAFE2469859200243204 /* Main.storyboard in Resources */,
@@ -141,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D104A838246D40C600BC7E81 /* ResultViewController.swift in Sources */,
 				AB88DAF72469859200243204 /* AppDelegate.swift in Sources */,
 				2DD7F15B246AFFB000991658 /* CanvasView.swift in Sources */,
 				AB88DAF92469859200243204 /* SceneDelegate.swift in Sources */,
