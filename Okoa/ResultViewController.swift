@@ -66,7 +66,7 @@ extension ResultViewController {
     func loadImage(named filename: String) {
         imageResultView.layer.cornerRadius = 0.3
         imageResult.setImage(UIImage(named: filename), for: .normal)
-        resultNameLabel.text = filename
+        resultNameLabel.text = filename.capitalized
     }
     
     override open var shouldAutorotate: Bool {
