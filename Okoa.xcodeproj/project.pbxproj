@@ -16,6 +16,7 @@
 		AB88DB032469859300243204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB88DB012469859300243204 /* LaunchScreen.storyboard */; };
 		D104A838246D40C600BC7E81 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D104A837246D40C600BC7E81 /* ResultViewController.swift */; };
 		D11452DD246D4C6D00095042 /* MyResources in Resources */ = {isa = PBXBuildFile; fileRef = D11452DC246D4C6D00095042 /* MyResources */; };
+		D1C99BC1246D5168000B5387 /* Kurri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1C99BC0246D5168000B5387 /* Kurri.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AB88DB042469859300243204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D104A837246D40C600BC7E81 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		D11452DC246D4C6D00095042 /* MyResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyResources; sourceTree = "<group>"; };
+		D1C99BC0246D5168000B5387 /* Kurri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kurri.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		AB88DAF52469859200243204 /* Okoa */ = {
 			isa = PBXGroup;
 			children = (
+				D1C99BC0246D5168000B5387 /* Kurri.ttf */,
 				D11452DC246D4C6D00095042 /* MyResources */,
 				AB88DAF62469859200243204 /* AppDelegate.swift */,
 				AB88DAF82469859200243204 /* SceneDelegate.swift */,
@@ -136,6 +139,7 @@
 			files = (
 				D11452DD246D4C6D00095042 /* MyResources in Resources */,
 				AB88DB032469859300243204 /* LaunchScreen.storyboard in Resources */,
+				D1C99BC1246D5168000B5387 /* Kurri.ttf in Resources */,
 				AB88DB002469859300243204 /* Assets.xcassets in Resources */,
 				AB88DAFE2469859200243204 /* Main.storyboard in Resources */,
 			);

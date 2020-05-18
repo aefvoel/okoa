@@ -35,6 +35,9 @@ class ResultViewController: UIViewController {
     
 
     @IBAction func shareBtnDidPressed(_ sender: Any) {
+        let items = [imageResult.currentImage]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
     }
     
     @IBAction func backArrowBtnDidPressed(_ sender: Any) {
