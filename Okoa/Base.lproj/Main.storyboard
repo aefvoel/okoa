@@ -291,6 +291,7 @@
                                         <state key="normal" image="arrows"/>
                                         <connections>
                                             <action selector="nextBtnDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="O2q-0c-mPw"/>
+                                            <segue destination="Qce-QO-7UO" kind="show" identifier="to_quiz" id="cFd-Hn-9lO"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6lT-Nl-2qv" customClass="CanvasView" customModule="Okoa" customModuleProvider="target">
@@ -349,7 +350,143 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCX-6q-06o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2376" y="1877"/>
+            <point key="canvasLocation" x="2369" y="1877"/>
+        </scene>
+        <!--Quiz View Controller-->
+        <scene sceneID="sqO-XS-tlo">
+            <objects>
+                <viewController id="Qce-QO-7UO" customClass="QuizViewController" customModule="Okoa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5IR-9s-owo">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgr CP" translatesAutoresizingMaskIntoConstraints="NO" id="1hm-vC-Xfb">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j63-ar-E0d">
+                                <rect key="frame" x="69" y="48" width="758" height="318"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BV1-ZZ-xO1">
+                                        <rect key="frame" x="13" y="5" width="47" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="home"/>
+                                        <connections>
+                                            <action selector="homeBtnDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="wjP-gJ-pAO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4S-Ec-cBG">
+                                        <rect key="frame" x="210" y="71" width="339" height="165"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.57805925609999997" green="0.43905815479999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Image Result">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="imageResultDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="cWy-n5-BmH"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Which one the correct sound?" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deH-IX-Re9">
+                                        <rect key="frame" x="150" y="16" width="458" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="KurriIslandPERSONAL-Light" family="Kurri Island PERSONAL" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFc-jN-Jev">
+                                        <rect key="frame" x="210" y="267" width="119" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="button choices-miniquiz"/>
+                                        <connections>
+                                            <action selector="btnTapChoices:" destination="Qce-QO-7UO" eventType="touchUpInside" id="9Ye-ep-8ZZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7T-jw-yDC">
+                                        <rect key="frame" x="430" y="267" width="119" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="button choices-miniquiz"/>
+                                        <connections>
+                                            <action selector="btnTapChoices:" destination="Qce-QO-7UO" eventType="touchUpInside" id="rCI-mZ-Ykj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7J-e7-O93">
+                                <rect key="frame" x="0.0" y="-10" width="79" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="backarrow">
+                                    <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backArrowBtnDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="lwF-c9-XIB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tdi-TD-uYi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XKP-Tl-HXG"/>
+                    <connections>
+                        <outlet property="firstChoice" destination="ZFc-jN-Jev" id="KYa-Fz-tBW"/>
+                        <outlet property="secondChoice" destination="T7T-jw-yDC" id="8rY-uR-rgc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rY-3w-Lgi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3108.4821428571427" y="1876.8115942028987"/>
+        </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="MYQ-w1-bUl">
+            <objects>
+                <viewController storyboardIdentifier="alert_right" id="1Ea-4V-myt" customClass="AlertViewController" customModule="Okoa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" alpha="0.69999999999999996" contentMode="scaleToFill" id="hPM-Q2-2TC">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alert right" translatesAutoresizingMaskIntoConstraints="NO" id="1T0-nw-6C0">
+                                <rect key="frame" x="273" y="137" width="351" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <viewLayoutGuide key="safeArea" id="z7E-Ps-qjD"/>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="hPM-Q2-2TC" id="a7F-U4-5Ig"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OIO-XE-Sz7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3108" y="2774"/>
+        </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="KTy-CE-rHu">
+            <objects>
+                <viewController storyboardIdentifier="alert_wrong" id="HbR-Sb-b3b" customClass="AlertViewController" customModule="Okoa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" alpha="0.69999999999999996" contentMode="scaleToFill" id="bQP-00-II3">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alert wrong" translatesAutoresizingMaskIntoConstraints="NO" id="PtT-aq-Lao">
+                                <rect key="frame" x="272" y="136" width="351" height="141"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <viewLayoutGuide key="safeArea" id="2eJ-Na-G19"/>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="bQP-00-II3" id="rAb-nn-xnq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ru8-iF-xg9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3878" y="2774"/>
         </scene>
         <!--Coloring View Controller-->
         <scene sceneID="rDg-VO-Yx9">
@@ -483,10 +620,13 @@
     <resources>
         <image name="Coloring page" width="896" height="414"/>
         <image name="Lets " width="210" height="46"/>
+        <image name="alert right" width="406" height="160"/>
+        <image name="alert wrong" width="406" height="160"/>
         <image name="animals-button" width="170" height="178"/>
         <image name="arrows" width="41" height="38"/>
         <image name="backarrow" width="162" height="161"/>
         <image name="bgr CP" width="750" height="347"/>
+        <image name="button choices-miniquiz" width="119" height="29"/>
         <image name="button next OB" width="104" height="72"/>
         <image name="done button-cp" width="69" height="62"/>
         <image name="eraser button - cp" width="31" height="28"/>

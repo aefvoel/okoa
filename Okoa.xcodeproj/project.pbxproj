@@ -17,6 +17,8 @@
 		AB88DB032469859300243204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB88DB012469859300243204 /* LaunchScreen.storyboard */; };
 		AB961626246A522100CEB84C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB961625246A522100CEB84C /* OnboardingViewController.swift */; };
 		AB961628246A6BFB00CEB84C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB961627246A6BFB00CEB84C /* MenuViewController.swift */; };
+		ABDE4420247277CF000B0B4B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE441F247277CF000B0B4B /* QuizViewController.swift */; };
+		ABDE442224728683000B0B4B /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE442124728683000B0B4B /* AlertViewController.swift */; };
 		D104A838246D40C600BC7E81 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D104A837246D40C600BC7E81 /* ResultViewController.swift */; };
 		D11452DD246D4C6D00095042 /* MyResources in Resources */ = {isa = PBXBuildFile; fileRef = D11452DC246D4C6D00095042 /* MyResources */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		AB88DB042469859300243204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB961625246A522100CEB84C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AB961627246A6BFB00CEB84C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		ABDE441F247277CF000B0B4B /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		ABDE442124728683000B0B4B /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		D104A837246D40C600BC7E81 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		D11452DC246D4C6D00095042 /* MyResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyResources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +76,7 @@
 				AB88DAF62469859200243204 /* AppDelegate.swift */,
 				AB88DAF82469859200243204 /* SceneDelegate.swift */,
 				AB88DAFC2469859200243204 /* Main.storyboard */,
+				ABDE441F247277CF000B0B4B /* QuizViewController.swift */,
 				AB88DAFF2469859300243204 /* Assets.xcassets */,
 				AB88DB012469859300243204 /* LaunchScreen.storyboard */,
 				AB88DB042469859300243204 /* Info.plist */,
@@ -81,6 +86,7 @@
 				2DD7F15A246AFFB000991658 /* CanvasView.swift */,
 				D104A837246D40C600BC7E81 /* ResultViewController.swift */,
 				AB8711A824724E9B0093725B /* ViewController.swift */,
+				ABDE442124728683000B0B4B /* AlertViewController.swift */,
 			);
 			path = Okoa;
 			sourceTree = "<group>";
@@ -160,9 +166,11 @@
 				AB961628246A6BFB00CEB84C /* MenuViewController.swift in Sources */,
 				D104A838246D40C600BC7E81 /* ResultViewController.swift in Sources */,
 				AB88DAF72469859200243204 /* AppDelegate.swift in Sources */,
+				ABDE442224728683000B0B4B /* AlertViewController.swift in Sources */,
 				2DD7F15B246AFFB000991658 /* CanvasView.swift in Sources */,
 				AB88DAF92469859200243204 /* SceneDelegate.swift in Sources */,
 				AB961626246A522100CEB84C /* OnboardingViewController.swift in Sources */,
+				ABDE4420247277CF000B0B4B /* QuizViewController.swift in Sources */,
 				AB8711A924724E9B0093725B /* ViewController.swift in Sources */,
 				2DD7F157246A652F00991658 /* ColoringViewController.swift in Sources */,
 			);
