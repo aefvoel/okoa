@@ -27,6 +27,7 @@ class ColoringViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        //sketchPlace.image = #imageLiteral(resourceName: "Anjing2")
     }
     
     @IBAction func shuffleButton(_ sender: Any) {
@@ -43,7 +44,7 @@ class ColoringViewController: UIViewController {
     }
     
     @IBAction func redoButton(_ sender: Any) {
-        
+        canvasView.redoDraw()
     }
     
     @IBAction func eraserButton(_ sender: Any) {
@@ -51,9 +52,17 @@ class ColoringViewController: UIViewController {
     }
     
     @IBAction func doneButton(_ sender: Any) {
-        
+        let image = canvasView.savePic()
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
     }
     
+    @objc func imagesaved(_ image: UIImage, didFinishSavingWithError error: Error?, contextType: UnsafeRawPointer){
+        if error != nil {
+            print("Unable to save image.")
+        }else{
+            print("Image saved!")
+        }
+    }
 }
 
 extension ColoringViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -69,10 +78,25 @@ extension ColoringViewController: UICollectionViewDelegate, UICollectionViewData
         //}
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //canvasView.strokeColor = items[indexPath.row]
         self.canvasView.strokeColor = items[indexPath.row]
     }
-    
-    
+}
+
+extension UIView{
+    func savePic() -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+        
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        if image != nil{
+            return image!
+        }
+        return UIImage()
+    }
 }
