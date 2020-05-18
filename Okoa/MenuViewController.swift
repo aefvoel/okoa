@@ -22,17 +22,17 @@ class MenuViewController: UIViewController {
     
 
     @IBAction func btnVehicles(_ sender: UIButton) {
-        categorySketch = [#imageLiteral(resourceName: "Anggur"), #imageLiteral(resourceName: "Apel"), #imageLiteral(resourceName: "Banana"), #imageLiteral(resourceName: "Brokoli")]
+        categorySketch = [#imageLiteral(resourceName: "Sepeda"), #imageLiteral(resourceName: "Pesawat"), #imageLiteral(resourceName: "Bis"), #imageLiteral(resourceName: "Mobil")]
         performSegue(withIdentifier: "to_coloring", sender: self)
     }
     
     @IBAction func btnAnimals(_ sender: UIButton) {
-        categorySketch = [#imageLiteral(resourceName: "Pesawat"), #imageLiteral(resourceName: "Dolphin"), #imageLiteral(resourceName: "Gajah"), #imageLiteral(resourceName: "Kucing")]
+        categorySketch = [#imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "Dolphin"), #imageLiteral(resourceName: "Gajah"), #imageLiteral(resourceName: "Kucing")]
         performSegue(withIdentifier: "to_coloring", sender: self)
     }
     
     @IBAction func btnFruits(_ sender: UIButton) {
-        categorySketch = [#imageLiteral(resourceName: "Bis"), #imageLiteral(resourceName: "Mobil"), #imageLiteral(resourceName: "Pesawat"), #imageLiteral(resourceName: "Sepeda")]
+        categorySketch = [#imageLiteral(resourceName: "Brokoli"), #imageLiteral(resourceName: "Banana"), #imageLiteral(resourceName: "Anggur"), #imageLiteral(resourceName: "Apel")]
         performSegue(withIdentifier: "to_coloring", sender: self)
     }
     

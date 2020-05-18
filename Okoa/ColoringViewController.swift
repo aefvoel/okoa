@@ -59,18 +59,11 @@ class ColoringViewController: UIViewController {
         
     }
     
-//    @IBAction func doneButton(_ sender: Any) {
-//        let image = canvasView.savePic()
-//        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
-//    }
-    
-    @objc func imagesaved(_ image: UIImage, didFinishSavingWithError error: Error?, contextType: UnsafeRawPointer){
-        if error != nil {
-            print("Unable to save image.")
-        }else{
-            print("Image saved!")
-        }
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    
 }
 
 extension ColoringViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -93,18 +86,4 @@ extension ColoringViewController: UICollectionViewDelegate, UICollectionViewData
     }
 }
 
-extension UIView{
-    func savePic() -> UIImage{
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
-        
-        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-        
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        if image != nil{
-            return image!
-        }
-        return UIImage()
-    }
-}
+

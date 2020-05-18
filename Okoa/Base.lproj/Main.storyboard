@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -281,6 +281,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="share"/>
                                         <connections>
+                                            <action selector="doneButton:" destination="B5T-NS-yCo" eventType="touchUpInside" id="gWS-UQ-sQc"/>
                                             <action selector="shareBtnDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="jhv-4G-nXU"/>
                                         </connections>
                                     </button>
@@ -292,8 +293,13 @@
                                             <action selector="nextBtnDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="O2q-0c-mPw"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6lT-Nl-2qv" customClass="CanvasView" customModule="Okoa" customModuleProvider="target">
+                                        <rect key="frame" x="229" y="12" width="420" height="248"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pci-A6-kgC">
-                                        <rect key="frame" x="229" y="12" width="300" height="237"/>
+                                        <rect key="frame" x="229" y="12" width="420" height="248"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.57805925609999997" green="0.43905815479999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Image Result">
@@ -323,7 +329,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="backarrow">
+                                <state key="normal" image="backarrow" backgroundImage="backarrow">
                                     <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -336,6 +342,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="K1G-1C-oAc"/>
                     <connections>
+                        <outlet property="canvasView" destination="6lT-Nl-2qv" id="MiR-Lh-NQe"/>
                         <outlet property="imageResult" destination="pci-A6-kgC" id="VLv-pt-bva"/>
                         <outlet property="imageResultView" destination="i5L-rN-FlI" id="Ojs-NO-rqs"/>
                         <outlet property="resultNameLabel" destination="TbW-uw-uoc" id="U2o-5T-E9f"/>
@@ -448,6 +455,19 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8So-vk-Pci">
+                                <rect key="frame" x="0.0" y="-29" width="79" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="backarrow" backgroundImage="backarrow">
+                                    <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backArrowBtnDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="mUk-my-WOk"/>
+                                    <action selector="backButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="GpU-wZ-kxs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="J1f-2l-3R5"/>

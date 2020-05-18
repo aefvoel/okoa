@@ -11,7 +11,8 @@ import AVFoundation
 import CoreHaptics
 
 class ResultViewController: UIViewController {
-
+    
+    @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var imageResultView: UIView!
     @IBOutlet weak var imageResult: UIButton!
     @IBOutlet weak var resultNameLabel: UILabel!
@@ -28,19 +29,34 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loadImage(named: imageName)
         createEngine()
     }
     
-
+    @IBAction func doneButton(_ sender: Any) {
+        let image = canvasView.savePic()
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
+    }
+    
+    @objc func imagesaved(_ image: UIImage, didFinishSavingWithError error: Error?, contextType: UnsafeRawPointer){
+        if error != nil {
+            print("Unable to save image.")
+        }else{
+            print("Image saved!")
+        }
+    }
+    
     @IBAction func shareBtnDidPressed(_ sender: Any) {
+        
     }
     
     @IBAction func backArrowBtnDidPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func homeBtnDidPressed(_ sender: Any) {
+        
     }
     
     @IBAction func imageResultDidPressed(_ sender: Any) {
@@ -48,18 +64,19 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func nextBtnDidPressed(_ sender: Any) {
+        
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension ResultViewController {
@@ -72,30 +89,30 @@ extension ResultViewController {
     override open var shouldAutorotate: Bool {
         return true
     }
-   
+    
     override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
-
+    
 }
 
 extension ResultViewController {
     func createEngine() {
-       do {
-           engine = try CHHapticEngine()
-       } catch let error {
-           print("Engine Creation Error: \(error)")
-       }
-       
-       if engine == nil {
-           print("Failed to create engine!")
-       } else {
+        do {
+            engine = try CHHapticEngine()
+        } catch let error {
+            print("Engine Creation Error: \(error)")
+        }
+        
+        if engine == nil {
+            print("Failed to create engine!")
+        } else {
             do {
                 try engine.start()
             } catch {
                 print("Init fail")
             }
-        
+            
             engine.stoppedHandler = { reason in
                 print("The engine stopped for reason: \(reason.rawValue)")
                 switch reason {
@@ -108,7 +125,7 @@ extension ResultViewController {
                     print("Unknown error")
                 }
             }
-
+            
             engine.resetHandler = {
                 print("The engine reset --> Restarting now!")
                 do {
@@ -117,29 +134,45 @@ extension ResultViewController {
                     print("Failed to restart the engine: \(error)")
                 }
             }
-       }
+        }
     }
     
     func playHapticsAndSoundFile(named filename: String) {
-          guard let path = Bundle.main.path(forResource: filename, ofType: "ahap") else { return }
-          guard let url = Bundle.main.url(forResource: filename, withExtension: "wav") else { return }
-          
-          do {
-               try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-               try AVAudioSession.sharedInstance().setActive(true)
+        guard let path = Bundle.main.path(forResource: filename, ofType: "ahap") else { return }
+        guard let url = Bundle.main.url(forResource: filename, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            guard let player = player else { return }
+            player.play()
+            
+            if supportsHaptics {
+                try engine.start()
+                
+                try engine.playPattern(from: URL(fileURLWithPath: path))
+            }
+            
+        } catch {
+            print("An error occured playing \(filename): \(error).")
+        }
+    }
+}
 
-               player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
-               guard let player = player else { return }
-               player.play()
-               
-               if supportsHaptics {
-                   try engine.start()
-                   
-                   try engine.playPattern(from: URL(fileURLWithPath: path))
-               }
-              
-          } catch {
-              print("An error occured playing \(filename): \(error).")
-          }
-       }
+extension UIView{
+    func savePic() -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+        
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        if image != nil{
+            return image!
+        }
+        return UIImage()
+    }
 }
