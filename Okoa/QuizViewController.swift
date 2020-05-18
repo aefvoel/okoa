@@ -10,14 +10,27 @@ import UIKit
 
 class QuizViewController: UIViewController {
 
+    @IBOutlet weak var categoryImg: UIButton!
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var firstChoice: UIButton!
     @IBOutlet weak var secondChoice: UIButton!
+    
+    var imageFromSegue: UIImage!
+    var labelFromSegue: String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        categoryLabel.text = labelFromSegue
+        categoryImg.setImage(imageFromSegue, for: .normal)
+        firstChoice.setTitle(labelFromSegue, for: .normal)
+        secondChoice.setTitle(labelFromSegue, for: .normal)
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnBack(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func btnTapChoices(_ sender: UIButton) {
         answerValidation(isCorrect: true)
     }
@@ -37,6 +50,8 @@ class QuizViewController: UIViewController {
             self.present(myAlert, animated: true, completion: nil)
         }
     }
+    
+    
     /*
     // MARK: - Navigation
 

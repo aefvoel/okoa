@@ -43,6 +43,14 @@ class ResultViewController: UIViewController {
 //        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? QuizViewController {
+            destination.imageFromSegue = imageFromSegue
+            destination.labelFromSegue = resultNameLabel.text
+        }
+    }
+    
     @objc func imagesaved(_ image: UIImage, didFinishSavingWithError error: Error?, contextType: UnsafeRawPointer){
         if error != nil {
             print("Unable to save image.")
