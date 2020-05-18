@@ -14,6 +14,22 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8az-6q-eSp">
+                                <rect key="frame" x="385" y="189" width="127" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Numpang Taro"/>
+                                <connections>
+                                    <segue destination="j6j-Ou-Ywc" kind="show" id="fUU-vz-nFE"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wnz-Xr-FOC">
+                                <rect key="frame" x="604" y="92" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -219,6 +235,126 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TZ-b6-M8g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1593.75" y="989.85507246376824"/>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--Coloring View Controller-->
+        <scene sceneID="rDg-VO-Yx9">
+            <objects>
+                <viewController id="j6j-Ou-Ywc" customClass="ColoringViewController" customModule="Okoa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Isp-rb-8N5">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Coloring page" translatesAutoresizingMaskIntoConstraints="NO" id="IJY-ZH-KmV">
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K61-TP-kC2">
+                                <rect key="frame" x="139" y="321" width="34" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="shuffle-arrows-hand-drawn-symbol"/>
+                                <connections>
+                                    <action selector="shuffleButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="eQa-Tb-Jpj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnU-PM-suX">
+                                <rect key="frame" x="782" y="61" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="eraser button - cp"/>
+                                <connections>
+                                    <action selector="eraserButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="8ba-lS-eUM"/>
+                                    <action selector="shuffleButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="8TZ-GY-bKB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Me-fb-Fv7">
+                                <rect key="frame" x="763" y="278" width="88" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="done button-cp"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="Svq-aV-a2a"/>
+                                    <action selector="shuffleButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="gzJ-NE-iti"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9S-wo-1Kb">
+                                <rect key="frame" x="740" y="61" width="34" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="redo button-cp"/>
+                                <connections>
+                                    <action selector="redoButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="Pnj-P9-ehC"/>
+                                    <action selector="shuffleButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="jYU-TI-GDr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfL-f2-16A">
+                                <rect key="frame" x="656" y="61" width="34" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="undo button-cp"/>
+                                <connections>
+                                    <action selector="shuffleButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="gIo-tD-LvA"/>
+                                    <action selector="undoButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="BAH-Ah-AXT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KK-Zz-pjV">
+                                <rect key="frame" x="694" y="58" width="41" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="reset button-cp"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="JIh-JI-AGP"/>
+                                    <action selector="shuffleButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="cMY-TW-1UF"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cwb-DY-fWs">
+                                <rect key="frame" x="91" y="143" width="130" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BSu-Zm-QnN">
+                                    <size key="itemSize" width="39" height="35"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="V3x-QJ-4ar">
+                                        <rect key="frame" x="0.0" y="0.0" width="39" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="49H-Ai-2Xm">
+                                            <rect key="frame" x="0.0" y="0.0" width="39" height="35"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="39" height="35"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6SC-HD-1lZ" customClass="CanvasView" customModule="Okoa" customModuleProvider="target">
+                                <rect key="frame" x="280" y="104" width="420" height="248"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Lets " translatesAutoresizingMaskIntoConstraints="NO" id="n4Y-Wk-ggq">
+                                        <rect key="frame" x="-22" y="-91" width="227" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4N-OQ-9Or">
+                                        <rect key="frame" x="-10" y="-6" width="441" height="260"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="J1f-2l-3R5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pbd-hm-CnS"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="IJY-ZH-KmV" id="7yv-mT-ur5"/>
+                        <outlet property="canvasView" destination="6SC-HD-1lZ" id="k2k-OC-DCw"/>
+                        <outlet property="collectionView" destination="cwb-DY-fWs" id="Bdb-mR-qV5"/>
+                        <outlet property="sketchPlace" destination="g4N-OQ-9Or" id="ZOI-JJ-M3g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hJC-xu-lm0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815.625" y="137.68115942028987"/>
         </scene>
     </scenes>
     <resources>
@@ -230,5 +366,13 @@
         <image name="iPhone 11 - OB start" width="896" height="414"/>
         <image name="let's go button" width="178" height="41"/>
         <image name="vehicles-button" width="170" height="178"/>
+        <image name="Coloring page" width="896" height="414"/>
+        <image name="Lets " width="210" height="46"/>
+        <image name="done button-cp" width="69" height="62"/>
+        <image name="eraser button - cp" width="31" height="28"/>
+        <image name="redo button-cp" width="26" height="22"/>
+        <image name="reset button-cp" width="36" height="35"/>
+        <image name="shuffle-arrows-hand-drawn-symbol" width="29" height="28"/>
+        <image name="undo button-cp" width="27" height="22"/>
     </resources>
 </document>
