@@ -17,10 +17,10 @@ struct TouchPointAndColor  {
     init(color: UIColor, points: [CGPoint]){
         self.color = color
         self.points = points
-    }    
+    }
+    
 }
-
-class CanvasView: UIImageView {
+class CanvasView: UIView {
     
     var lines = [TouchPointAndColor]()
     var temp = [TouchPointAndColor]()
@@ -56,15 +56,14 @@ class CanvasView: UIImageView {
             return
         }
         
+        
         guard var lastPoint = lines.popLast() else{
             return
         }
-        
         lastPoint.points?.append(touch)
         lastPoint.color = strokeColor
         lastPoint.width = strokeWidth
         lastPoint.opacity = strokeOpacity
-        
         lines.append(lastPoint)
         setNeedsDisplay()
     }

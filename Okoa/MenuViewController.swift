@@ -11,6 +11,7 @@ import UIKit
 class MenuViewController: UIViewController {
 
     var childName: String = ""
+    var categorySketch: [UIImage] = []
     @IBOutlet weak var labelName: UILabel!
     
     override func viewDidLoad() {
@@ -21,15 +22,24 @@ class MenuViewController: UIViewController {
     
 
     @IBAction func btnVehicles(_ sender: UIButton) {
+        categorySketch = [#imageLiteral(resourceName: "Anggur"), #imageLiteral(resourceName: "Apel"), #imageLiteral(resourceName: "Banana"), #imageLiteral(resourceName: "Brokoli")]
         performSegue(withIdentifier: "to_coloring", sender: self)
     }
     
     @IBAction func btnAnimals(_ sender: UIButton) {
+        categorySketch = [#imageLiteral(resourceName: "Pesawat"), #imageLiteral(resourceName: "Dolphin"), #imageLiteral(resourceName: "Gajah"), #imageLiteral(resourceName: "Kucing")]
         performSegue(withIdentifier: "to_coloring", sender: self)
     }
     
     @IBAction func btnFruits(_ sender: UIButton) {
+        categorySketch = [#imageLiteral(resourceName: "Bis"), #imageLiteral(resourceName: "Mobil"), #imageLiteral(resourceName: "Pesawat"), #imageLiteral(resourceName: "Sepeda")]
         performSegue(withIdentifier: "to_coloring", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ColoringViewController {
+            destination.categoryFromSegue = categorySketch
+        }
     }
     /*
     // MARK: - Navigation

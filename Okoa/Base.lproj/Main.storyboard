@@ -380,8 +380,6 @@
                                 <state key="normal" backgroundImage="done button-cp"/>
                                 <connections>
                                     <action selector="btnToResult:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="Iam-kC-Z6r"/>
-                                    <action selector="doneButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="Svq-aV-a2a"/>
-                                    <action selector="shuffleButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="gzJ-NE-iti"/>
                                     <segue destination="B5T-NS-yCo" kind="show" identifier="to_result" id="ntK-IM-rl2"/>
                                 </connections>
                             </button>
@@ -464,7 +462,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJC-xu-lm0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="1878"/>
+            <point key="canvasLocation" x="1593.75" y="1876.8115942028987"/>
         </scene>
     </scenes>
     <resources>
