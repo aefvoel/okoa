@@ -16,7 +16,7 @@ class ColoringViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var fruitSketch: [UIImage] = [#imageLiteral(resourceName: "Anggur"), #imageLiteral(resourceName: "Apel"), #imageLiteral(resourceName: "Banana"), #imageLiteral(resourceName: "Brokoli")]
-    var animalSketch: [UIImage] = [#imageLiteral(resourceName: "Anjing"), #imageLiteral(resourceName: "Dolphin"), #imageLiteral(resourceName: "Gajah"), #imageLiteral(resourceName: "Kucing")]
+    var animalSketch: [UIImage] = [#imageLiteral(resourceName: "Pesawat"), #imageLiteral(resourceName: "Dolphin"), #imageLiteral(resourceName: "Gajah"), #imageLiteral(resourceName: "Kucing")]
     var vehicleSketch: [UIImage] = [#imageLiteral(resourceName: "Bis"), #imageLiteral(resourceName: "Mobil"), #imageLiteral(resourceName: "Pesawat"), #imageLiteral(resourceName: "Sepeda")]
     
     var items: [UIColor] = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1), #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0, green: 0.04544427991, blue: 1, alpha: 1), #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0, green: 0.6007654667, blue: 0, alpha: 1), #colorLiteral(red: 0.3371880651, green: 1, blue: 0.4706221223, alpha: 1), #colorLiteral(red: 1, green: 0.6243972182, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.9899911284, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
@@ -27,9 +27,11 @@ class ColoringViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        //sketchPlace.image = #imageLiteral(resourceName: "Anjing2")
     }
     
+    @IBAction func btnToResult(_ sender: UIButton) {
+        performSegue(withIdentifier: "to_result", sender: self)
+    }
     @IBAction func shuffleButton(_ sender: Any) {
         let number = Int.random(in: 0 ... 3)
         sketchPlace.image = fruitSketch[number]
@@ -51,10 +53,10 @@ class ColoringViewController: UIViewController {
         
     }
     
-    @IBAction func doneButton(_ sender: Any) {
-        let image = canvasView.savePic()
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
-    }
+//    @IBAction func doneButton(_ sender: Any) {
+//        let image = canvasView.savePic()
+//        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
+//    }
     
     @objc func imagesaved(_ image: UIImage, didFinishSavingWithError error: Error?, contextType: UnsafeRawPointer){
         if error != nil {
@@ -72,10 +74,10 @@ extension ColoringViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath )
-        //if let view = cell.viewWithTag(1){
+        
         cell.contentView.backgroundColor = items[indexPath.row]
         cell.layer.cornerRadius = 20
-        //}
+        
         return cell
     }
     

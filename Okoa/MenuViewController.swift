@@ -20,6 +20,17 @@ class MenuViewController: UIViewController {
     }
     
 
+    @IBAction func btnVehicles(_ sender: UIButton) {
+        performSegue(withIdentifier: "to_coloring", sender: self)
+    }
+    
+    @IBAction func btnAnimals(_ sender: UIButton) {
+        performSegue(withIdentifier: "to_coloring", sender: self)
+    }
+    
+    @IBAction func btnFruits(_ sender: UIButton) {
+        performSegue(withIdentifier: "to_coloring", sender: self)
+    }
     /*
     // MARK: - Navigation
 
