@@ -17,7 +17,9 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var imageResult: UIButton!
     @IBOutlet weak var resultNameLabel: UILabel!
     
-    var imageName: String = "dog"
+    var imageFromSegue: UIImage!
+    
+    var imageName: String!
     var imageColouredResult: UIImage!
     
     var engine: CHHapticEngine!
@@ -29,14 +31,16 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadImage(named: imageName)
+    
+//        loadImage(named: imageName)
+        imageResult.setImage(imageFromSegue, for: .normal)
+        resultNameLabel.text = imageName
         createEngine()
     }
     
     @IBAction func doneButton(_ sender: Any) {
-        let image = canvasView.savePic()
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
+//        let image = canvasView.savePic()
+//        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
     }
     
     @objc func imagesaved(_ image: UIImage, didFinishSavingWithError error: Error?, contextType: UnsafeRawPointer){
@@ -161,18 +165,4 @@ extension ResultViewController {
     }
 }
 
-extension UIView{
-    func savePic() -> UIImage{
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
-        
-        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-        
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        if image != nil{
-            return image!
-        }
-        return UIImage()
-    }
-}
+

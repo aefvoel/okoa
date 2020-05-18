@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -301,8 +301,7 @@
                                     <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pci-A6-kgC">
                                         <rect key="frame" x="229" y="12" width="420" height="248"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.57805925609999997" green="0.43905815479999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Image Result">
+                                        <state key="normal">
                                             <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -378,7 +377,6 @@
                                 <state key="normal" backgroundImage="eraser button - cp"/>
                                 <connections>
                                     <action selector="eraserButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="8ba-lS-eUM"/>
-                                    <action selector="shuffleButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="8TZ-GY-bKB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Me-fb-Fv7">
@@ -396,7 +394,6 @@
                                 <state key="normal" backgroundImage="redo button-cp"/>
                                 <connections>
                                     <action selector="redoButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="Pnj-P9-ehC"/>
-                                    <action selector="shuffleButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="jYU-TI-GDr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfL-f2-16A">
@@ -404,7 +401,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="undo button-cp"/>
                                 <connections>
-                                    <action selector="shuffleButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="gIo-tD-LvA"/>
                                     <action selector="undoButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="BAH-Ah-AXT"/>
                                 </connections>
                             </button>
@@ -414,7 +410,6 @@
                                 <state key="normal" backgroundImage="reset button-cp"/>
                                 <connections>
                                     <action selector="resetButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="JIh-JI-AGP"/>
-                                    <action selector="shuffleButton:" destination="j6j-Ou-Ywc" eventType="touchUpInside" id="cMY-TW-1UF"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cwb-DY-fWs">

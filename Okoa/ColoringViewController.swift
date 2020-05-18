@@ -15,6 +15,8 @@ class ColoringViewController: UIViewController {
     @IBOutlet weak var sketchPlace: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var category: String!
+    var categoryLabel: [String]!
     var categorySketch: [UIImage]!
     var categoryFromSegue: [UIImage]!{
         didSet{
@@ -31,16 +33,19 @@ class ColoringViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
-        let number = Int.random(in: 0 ... 3)
+        let number = Int.random(in: 0 ... categorySketch.count - 1)
         sketchPlace.image = categorySketch[number]
+        category = categoryLabel[number]
     }
     
     @IBAction func btnToResult(_ sender: UIButton) {
         performSegue(withIdentifier: "to_result", sender: self)
     }
     @IBAction func shuffleButton(_ sender: Any) {
-        let number = Int.random(in: 0 ... 3)
+        let number = Int.random(in: 0 ... categorySketch.count - 1)
         sketchPlace.image = categorySketch[number]
+        category = categoryLabel[number]
+        canvasView.clearDraw()
     }
     
     @IBAction func undoButton(_ sender: Any) {
@@ -84,6 +89,29 @@ extension ColoringViewController: UICollectionViewDelegate, UICollectionViewData
         //canvasView.strokeColor = items[indexPath.row]
         self.canvasView.strokeColor = items[indexPath.row]
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ResultViewController {
+            destination.canvasView = canvasView
+            destination.imageFromSegue = canvasView.savePic()
+            destination.imageName = category
+        }
+    }
 }
 
+extension UIView{
+    func savePic() -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+        
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        if image != nil{
+            return image!
+        }
+        return UIImage()
+    }
+}
 
