@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D983D7824738ED600A413A2 /* ColorCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D983D7624738ED600A413A2 /* ColorCVCell.swift */; };
+		2D983D7924738ED600A413A2 /* ColorCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D983D7724738ED600A413A2 /* ColorCVCell.xib */; };
 		2DD7F157246A652F00991658 /* ColoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7F156246A652F00991658 /* ColoringViewController.swift */; };
 		2DD7F15B246AFFB000991658 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7F15A246AFFB000991658 /* CanvasView.swift */; };
 		AB8711A924724E9B0093725B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8711A824724E9B0093725B /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D983D7624738ED600A413A2 /* ColorCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCVCell.swift; sourceTree = "<group>"; };
+		2D983D7724738ED600A413A2 /* ColorCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCVCell.xib; sourceTree = "<group>"; };
 		2DD7F156246A652F00991658 /* ColoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringViewController.swift; sourceTree = "<group>"; };
 		2DD7F15A246AFFB000991658 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		AB8711A824724E9B0093725B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 				AB88DAF62469859200243204 /* AppDelegate.swift */,
 				AB88DAF82469859200243204 /* SceneDelegate.swift */,
 				AB88DAFC2469859200243204 /* Main.storyboard */,
+				2D983D7624738ED600A413A2 /* ColorCVCell.swift */,
+				2D983D7724738ED600A413A2 /* ColorCVCell.xib */,
 				ABDE441F247277CF000B0B4B /* QuizViewController.swift */,
 				AB88DAFF2469859300243204 /* Assets.xcassets */,
 				AB88DB012469859300243204 /* LaunchScreen.storyboard */,
@@ -152,6 +158,7 @@
 				D11452DD246D4C6D00095042 /* MyResources in Resources */,
 				AB88DB032469859300243204 /* LaunchScreen.storyboard in Resources */,
 				AB88DB002469859300243204 /* Assets.xcassets in Resources */,
+				2D983D7924738ED600A413A2 /* ColorCVCell.xib in Resources */,
 				AB88DAFE2469859200243204 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +180,7 @@
 				ABDE4420247277CF000B0B4B /* QuizViewController.swift in Sources */,
 				AB8711A924724E9B0093725B /* ViewController.swift in Sources */,
 				2DD7F157246A652F00991658 /* ColoringViewController.swift in Sources */,
+				2D983D7824738ED600A413A2 /* ColorCVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

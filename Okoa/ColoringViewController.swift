@@ -8,6 +8,10 @@
 
 import UIKit
 
+struct cellData {
+    let color : UIColor!
+}
+
 class ColoringViewController: UIViewController {
     
     @IBOutlet weak var canvasView: CanvasView!
@@ -24,15 +28,17 @@ class ColoringViewController: UIViewController {
         }
     }
     
-    
-    var items: [UIColor] = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1), #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0, green: 0.04544427991, blue: 1, alpha: 1), #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), #colorLiteral(red: 0, green: 0.6007654667, blue: 0, alpha: 1), #colorLiteral(red: 0.3371880651, green: 1, blue: 0.4706221223, alpha: 1), #colorLiteral(red: 1, green: 0.6243972182, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.9899911284, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
-    var cobaCOlor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+    var arrCellData = [cellData]()
+    var temp = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        arrCellData = [cellData(color: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)), cellData(color: #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)), cellData(color: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), cellData(color: #colorLiteral(red: 0, green: 0.04544427991, blue: 1, alpha: 1)), cellData(color: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)), cellData(color: #colorLiteral(red: 0, green: 0.6007654667, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 0.3371880651, green: 1, blue: 0.4706221223, alpha: 1)), cellData(color: #colorLiteral(red: 1, green: 0.6243972182, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 1, green: 0.9899911284, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)), cellData(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))]
+        
         let number = Int.random(in: 0 ... categorySketch.count - 1)
         sketchPlace.image = categorySketch[number]
         category = categoryLabel[number]
@@ -73,21 +79,22 @@ class ColoringViewController: UIViewController {
 
 extension ColoringViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        
+        return arrCellData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath )
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath ) as! ColorCVCell
         
-        cell.contentView.backgroundColor = items[indexPath.row]
-        cell.layer.cornerRadius = 20
+        cell.contentView.backgroundColor = arrCellData[indexPath.row].color
+        cell.layer.cornerRadius = 10
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //canvasView.strokeColor = items[indexPath.row]
-        self.canvasView.strokeColor = items[indexPath.row]
+        
+        self.canvasView.strokeColor = arrCellData[indexPath.row].color
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
