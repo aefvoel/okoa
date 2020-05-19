@@ -18,8 +18,8 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var resultNameLabel: UILabel!
     
     var imageFromSegue: UIImage!
-    
-    var imageName: String!
+    var categoryLabel: [String]!
+    var imageName: String = ""
     var imageColouredResult: UIImage!
     
     var engine: CHHapticEngine!
@@ -38,16 +38,12 @@ class ResultViewController: UIViewController {
         createEngine()
     }
     
-    @IBAction func doneButton(_ sender: Any) {
-//        let image = canvasView.savePic()
-//        UIImageWriteToSavedPhotosAlbum(image, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? QuizViewController {
             destination.imageFromSegue = imageFromSegue
             destination.labelFromSegue = resultNameLabel.text
+            destination.categoryArray = categoryLabel
         }
     }
     
@@ -60,7 +56,7 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func shareBtnDidPressed(_ sender: Any) {
-        
+        UIImageWriteToSavedPhotosAlbum(imageFromSegue, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
     }
     
     @IBAction func backArrowBtnDidPressed(_ sender: Any) {

@@ -10,14 +10,13 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
-    var childName: String = ""
     var categorySketch: [UIImage] = []
     var categoryLabel: [String] = []
     @IBOutlet weak var labelName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelName.text = childName
+        labelName.text = UserDefaults.standard.string(forKey: "childName")
         // Do any additional setup after loading the view.
     }
     

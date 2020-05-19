@@ -12,6 +12,7 @@ class OnboardingViewController: UIViewController {
 
     @IBOutlet weak var tfName: UITextField!
     @IBAction func onLetsGoBtn(_ sender: UIButton) {
+        UserDefaults.standard.set(tfName.text, forKey: "childName")
         performSegue(withIdentifier: "to_menu", sender: self)
     }
     override func viewDidLoad() {
@@ -28,10 +29,10 @@ class OnboardingViewController: UIViewController {
     }
     */
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? MenuViewController {
-            destination.childName = tfName.text ?? "Child Name"
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? MenuViewController {
+//            destination.childName = tfName.text ?? "Child Name"
+//        }
+//    }
 
 }

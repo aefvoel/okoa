@@ -15,6 +15,7 @@
 		AB88DAFE2469859200243204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB88DAFC2469859200243204 /* Main.storyboard */; };
 		AB88DB002469859300243204 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB88DAFF2469859300243204 /* Assets.xcassets */; };
 		AB88DB032469859300243204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB88DB012469859300243204 /* LaunchScreen.storyboard */; };
+		AB92450324738E9200F718C7 /* Kurri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB92450224738E9200F718C7 /* Kurri.ttf */; };
 		AB961626246A522100CEB84C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB961625246A522100CEB84C /* OnboardingViewController.swift */; };
 		AB961628246A6BFB00CEB84C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB961627246A6BFB00CEB84C /* MenuViewController.swift */; };
 		ABDE4420247277CF000B0B4B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE441F247277CF000B0B4B /* QuizViewController.swift */; };
@@ -34,6 +35,7 @@
 		AB88DAFF2469859300243204 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB88DB022469859300243204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB88DB042469859300243204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB92450224738E9200F718C7 /* Kurri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Kurri.ttf; path = Okoa/Kurri.ttf; sourceTree = "<group>"; };
 		AB961625246A522100CEB84C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AB961627246A6BFB00CEB84C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		ABDE441F247277CF000B0B4B /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		AB88DAEA2469859200243204 = {
 			isa = PBXGroup;
 			children = (
+				AB92450224738E9200F718C7 /* Kurri.ttf */,
 				AB88DAF52469859200243204 /* Okoa */,
 				AB88DAF42469859200243204 /* Products */,
 			);
@@ -149,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB92450324738E9200F718C7 /* Kurri.ttf in Resources */,
 				D11452DD246D4C6D00095042 /* MyResources in Resources */,
 				AB88DB032469859300243204 /* LaunchScreen.storyboard in Resources */,
 				AB88DB002469859300243204 /* Assets.xcassets in Resources */,
@@ -317,7 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7UM9U6CWFS;
+				DEVELOPMENT_TEAM = A97SVDB2Q9;
 				INFOPLIST_FILE = Okoa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -335,7 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7UM9U6CWFS;
+				DEVELOPMENT_TEAM = A97SVDB2Q9;
 				INFOPLIST_FILE = Okoa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

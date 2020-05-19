@@ -95,6 +95,7 @@ extension ColoringViewController: UICollectionViewDelegate, UICollectionViewData
             destination.canvasView = canvasView
             destination.imageFromSegue = canvasView.savePic()
             destination.imageName = category
+            destination.categoryLabel = categoryLabel
         }
     }
 }
