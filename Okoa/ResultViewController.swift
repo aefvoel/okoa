@@ -57,6 +57,9 @@ class ResultViewController: UIViewController {
     
     @IBAction func shareBtnDidPressed(_ sender: Any) {
         UIImageWriteToSavedPhotosAlbum(imageFromSegue, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
+//        let items = [imageResult.currentImage]
+//        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+//        present(ac, animated: true)
     }
     
     @IBAction func backArrowBtnDidPressed(_ sender: Any) {

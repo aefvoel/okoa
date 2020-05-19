@@ -15,13 +15,16 @@
 		AB88DAFE2469859200243204 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB88DAFC2469859200243204 /* Main.storyboard */; };
 		AB88DB002469859300243204 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB88DAFF2469859300243204 /* Assets.xcassets */; };
 		AB88DB032469859300243204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB88DB012469859300243204 /* LaunchScreen.storyboard */; };
-		AB92450324738E9200F718C7 /* Kurri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB92450224738E9200F718C7 /* Kurri.ttf */; };
 		AB961626246A522100CEB84C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB961625246A522100CEB84C /* OnboardingViewController.swift */; };
 		AB961628246A6BFB00CEB84C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB961627246A6BFB00CEB84C /* MenuViewController.swift */; };
 		ABDE4420247277CF000B0B4B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE441F247277CF000B0B4B /* QuizViewController.swift */; };
 		ABDE442224728683000B0B4B /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDE442124728683000B0B4B /* AlertViewController.swift */; };
 		D104A838246D40C600BC7E81 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D104A837246D40C600BC7E81 /* ResultViewController.swift */; };
 		D11452DD246D4C6D00095042 /* MyResources in Resources */ = {isa = PBXBuildFile; fileRef = D11452DC246D4C6D00095042 /* MyResources */; };
+		D119438E24738219002C7E7A /* OkoaSketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D119438D24738219002C7E7A /* OkoaSketch.swift */; };
+		D124E248247265440053F698 /* GenerateViewFromCoordinatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D124E247247265440053F698 /* GenerateViewFromCoordinatesViewController.swift */; };
+		D124E24E24726F890053F698 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D124E24D24726F890053F698 /* MyView.swift */; };
+		D1C99BC1246D5168000B5387 /* Kurri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1C99BC0246D5168000B5387 /* Kurri.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,13 +38,16 @@
 		AB88DAFF2469859300243204 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB88DB022469859300243204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB88DB042469859300243204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB92450224738E9200F718C7 /* Kurri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Kurri.ttf; path = Okoa/Kurri.ttf; sourceTree = "<group>"; };
 		AB961625246A522100CEB84C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AB961627246A6BFB00CEB84C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		ABDE441F247277CF000B0B4B /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		ABDE442124728683000B0B4B /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		D104A837246D40C600BC7E81 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		D11452DC246D4C6D00095042 /* MyResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyResources; sourceTree = "<group>"; };
+		D119438D24738219002C7E7A /* OkoaSketch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OkoaSketch.swift; sourceTree = "<group>"; };
+		D124E247247265440053F698 /* GenerateViewFromCoordinatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewFromCoordinatesViewController.swift; sourceTree = "<group>"; };
+		D124E24D24726F890053F698 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		D1C99BC0246D5168000B5387 /* Kurri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kurri.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,6 @@
 		AB88DAEA2469859200243204 = {
 			isa = PBXGroup;
 			children = (
-				AB92450224738E9200F718C7 /* Kurri.ttf */,
 				AB88DAF52469859200243204 /* Okoa */,
 				AB88DAF42469859200243204 /* Products */,
 			);
@@ -75,6 +80,8 @@
 		AB88DAF52469859200243204 /* Okoa */ = {
 			isa = PBXGroup;
 			children = (
+				D119438D24738219002C7E7A /* OkoaSketch.swift */,
+				D1C99BC0246D5168000B5387 /* Kurri.ttf */,
 				D11452DC246D4C6D00095042 /* MyResources */,
 				AB88DAF62469859200243204 /* AppDelegate.swift */,
 				AB88DAF82469859200243204 /* SceneDelegate.swift */,
@@ -90,6 +97,8 @@
 				D104A837246D40C600BC7E81 /* ResultViewController.swift */,
 				AB8711A824724E9B0093725B /* ViewController.swift */,
 				ABDE442124728683000B0B4B /* AlertViewController.swift */,
+				D124E247247265440053F698 /* GenerateViewFromCoordinatesViewController.swift */,
+				D124E24D24726F890053F698 /* MyView.swift */,
 			);
 			path = Okoa;
 			sourceTree = "<group>";
@@ -152,9 +161,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB92450324738E9200F718C7 /* Kurri.ttf in Resources */,
 				D11452DD246D4C6D00095042 /* MyResources in Resources */,
 				AB88DB032469859300243204 /* LaunchScreen.storyboard in Resources */,
+				D1C99BC1246D5168000B5387 /* Kurri.ttf in Resources */,
 				AB88DB002469859300243204 /* Assets.xcassets in Resources */,
 				AB88DAFE2469859200243204 /* Main.storyboard in Resources */,
 			);
@@ -168,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB961628246A6BFB00CEB84C /* MenuViewController.swift in Sources */,
+				D124E24E24726F890053F698 /* MyView.swift in Sources */,
 				D104A838246D40C600BC7E81 /* ResultViewController.swift in Sources */,
 				AB88DAF72469859200243204 /* AppDelegate.swift in Sources */,
 				ABDE442224728683000B0B4B /* AlertViewController.swift in Sources */,
@@ -176,7 +186,9 @@
 				AB961626246A522100CEB84C /* OnboardingViewController.swift in Sources */,
 				ABDE4420247277CF000B0B4B /* QuizViewController.swift in Sources */,
 				AB8711A924724E9B0093725B /* ViewController.swift in Sources */,
+				D124E248247265440053F698 /* GenerateViewFromCoordinatesViewController.swift in Sources */,
 				2DD7F157246A652F00991658 /* ColoringViewController.swift in Sources */,
+				D119438E24738219002C7E7A /* OkoaSketch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
