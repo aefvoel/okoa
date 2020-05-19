@@ -136,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="447.99107142857139" y="1357.9710144927537"/>
         </scene>
-        <!--GenerateSV Gfrom Coordinates View Controller-->
+        <!--Generate View From Coordinates View Controller-->
         <scene sceneID="cff-WG-XXo">
             <objects>
-                <viewController id="ucI-O0-eCm" customClass="GenerateSVGfromCoordinatesViewController" customModule="Okoa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ucI-O0-eCm" customClass="GenerateViewFromCoordinatesViewController" customModule="Okoa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CYg-uv-S9X">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,17 +148,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z49-iA-Eo9" customClass="MyView" customModule="Okoa" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z49-iA-Eo9">
                                 <rect key="frame" x="216" y="56" width="477" height="303"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ0-Bt-1nt">
+                                <rect key="frame" x="743" y="180" width="93" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateImageDidPressed:" destination="ucI-O0-eCm" eventType="touchUpInside" id="gdN-4Z-e6K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="pAv-Dl-psR"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="z49-iA-Eo9" id="p7g-gh-JBL"/>
+                        <outlet property="imageView" destination="z49-iA-Eo9" id="luY-EB-y5Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fQ-uN-GwB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

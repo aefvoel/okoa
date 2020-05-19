@@ -16,8 +16,8 @@
 		AB88DB032469859300243204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB88DB012469859300243204 /* LaunchScreen.storyboard */; };
 		D104A838246D40C600BC7E81 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D104A837246D40C600BC7E81 /* ResultViewController.swift */; };
 		D11452DD246D4C6D00095042 /* MyResources in Resources */ = {isa = PBXBuildFile; fileRef = D11452DC246D4C6D00095042 /* MyResources */; };
-		D124E248247265440053F698 /* GenerateSVGfromCoordinatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D124E247247265440053F698 /* GenerateSVGfromCoordinatesViewController.swift */; };
-		D124E24C24726F300053F698 /* StyleKitCarrot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D124E24B24726F300053F698 /* StyleKitCarrot.swift */; };
+		D119438E24738219002C7E7A /* OkoaSketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D119438D24738219002C7E7A /* OkoaSketch.swift */; };
+		D124E248247265440053F698 /* GenerateViewFromCoordinatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D124E247247265440053F698 /* GenerateViewFromCoordinatesViewController.swift */; };
 		D124E24E24726F890053F698 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D124E24D24726F890053F698 /* MyView.swift */; };
 		D1C99BC1246D5168000B5387 /* Kurri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1C99BC0246D5168000B5387 /* Kurri.ttf */; };
 /* End PBXBuildFile section */
@@ -34,8 +34,8 @@
 		AB88DB042469859300243204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D104A837246D40C600BC7E81 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		D11452DC246D4C6D00095042 /* MyResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MyResources; sourceTree = "<group>"; };
-		D124E247247265440053F698 /* GenerateSVGfromCoordinatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateSVGfromCoordinatesViewController.swift; sourceTree = "<group>"; };
-		D124E24B24726F300053F698 /* StyleKitCarrot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKitCarrot.swift; sourceTree = "<group>"; };
+		D119438D24738219002C7E7A /* OkoaSketch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OkoaSketch.swift; sourceTree = "<group>"; };
+		D124E247247265440053F698 /* GenerateViewFromCoordinatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateViewFromCoordinatesViewController.swift; sourceTree = "<group>"; };
 		D124E24D24726F890053F698 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		D1C99BC0246D5168000B5387 /* Kurri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kurri.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,7 +70,7 @@
 		AB88DAF52469859200243204 /* Okoa */ = {
 			isa = PBXGroup;
 			children = (
-				D124E24B24726F300053F698 /* StyleKitCarrot.swift */,
+				D119438D24738219002C7E7A /* OkoaSketch.swift */,
 				D1C99BC0246D5168000B5387 /* Kurri.ttf */,
 				D11452DC246D4C6D00095042 /* MyResources */,
 				AB88DAF62469859200243204 /* AppDelegate.swift */,
@@ -82,7 +82,7 @@
 				2DD7F156246A652F00991658 /* ColoringViewController.swift */,
 				2DD7F15A246AFFB000991658 /* CanvasView.swift */,
 				D104A837246D40C600BC7E81 /* ResultViewController.swift */,
-				D124E247247265440053F698 /* GenerateSVGfromCoordinatesViewController.swift */,
+				D124E247247265440053F698 /* GenerateViewFromCoordinatesViewController.swift */,
 				D124E24D24726F890053F698 /* MyView.swift */,
 			);
 			path = Okoa;
@@ -165,10 +165,10 @@
 				D104A838246D40C600BC7E81 /* ResultViewController.swift in Sources */,
 				AB88DAF72469859200243204 /* AppDelegate.swift in Sources */,
 				2DD7F15B246AFFB000991658 /* CanvasView.swift in Sources */,
-				D124E24C24726F300053F698 /* StyleKitCarrot.swift in Sources */,
 				AB88DAF92469859200243204 /* SceneDelegate.swift in Sources */,
-				D124E248247265440053F698 /* GenerateSVGfromCoordinatesViewController.swift in Sources */,
+				D124E248247265440053F698 /* GenerateViewFromCoordinatesViewController.swift in Sources */,
 				2DD7F157246A652F00991658 /* ColoringViewController.swift in Sources */,
+				D119438E24738219002C7E7A /* OkoaSketch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
