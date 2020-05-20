@@ -39,7 +39,7 @@ class MenuViewController: UIViewController {
     
     @IBAction func btnFruits(_ sender: UIButton) {
         categorySketch = [#imageLiteral(resourceName: "Brokoli"), #imageLiteral(resourceName: "Banana"), #imageLiteral(resourceName: "Anggur"), #imageLiteral(resourceName: "Apel")]
-        categoryLabel = ["Broccoli", "Banana", "Grape", "Apple"]
+        categoryLabel = ["Broccoli", "Banana", "Grape", "Apple", "Carrot"]
         categoryId = 2
         performSegue(withIdentifier: "to_coloring", sender: self)
     }

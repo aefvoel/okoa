@@ -58,13 +58,10 @@ class ColoringViewController: UIViewController {
         canvas = canvases[categoryId][number]
         
         let sketchView = MyView(frame: sketchPlace.bounds, canvas: canvas)
-        sketchView.tag = 100
         sketchPlace.addSubview(sketchView)
-//        sketchPlace.sendSubviewToBack(sketchView)
-        view.bringSubviewToFront(canvasView)
         
-        canvasView.sendSubviewToBack(sketchPlace)
-        canvasView.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        sketchPlace.backgroundColor = UIColor(white: 1, alpha: 0.1)
+        sketchView.backgroundColor = UIColor(white: 1, alpha: 0.1)
     }
     
     @IBAction func btnToResult(_ sender: UIButton) {
@@ -72,12 +69,16 @@ class ColoringViewController: UIViewController {
     }
     @IBAction func shuffleButton(_ sender: Any) {
         let number = Int.random(in: 0 ... canvases[categoryId].count - 1)
-        sketchPlace.viewWithTag(100)?.removeFromSuperview()
+        sketchPlace.subviews.forEach({ $0.removeFromSuperview() })
         
         canvas = canvases[categoryId][number]
         
         let sketchView = MyView(frame: sketchPlace.bounds, canvas: canvas)
+        
+        sketchPlace.backgroundColor = UIColor(white: 1, alpha: 0.1)
+        sketchView.backgroundColor = UIColor(white: 1, alpha: 0.1)
         sketchPlace.addSubview(sketchView)
+        
         
         category = categoryLabel[number]
         canvasView.clearDraw()
