@@ -29,7 +29,9 @@ class ColoringViewController: UIViewController {
     }
     
     var arrCellData = [cellData]()
+    var warnaEraser = [cellData]()
     var temp = false
+    var erase = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,7 @@ class ColoringViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        arrCellData = [cellData(color: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)), cellData(color: #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)), cellData(color: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), cellData(color: #colorLiteral(red: 0, green: 0.04544427991, blue: 1, alpha: 1)), cellData(color: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)), cellData(color: #colorLiteral(red: 0, green: 0.6007654667, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 0.3371880651, green: 1, blue: 0.4706221223, alpha: 1)), cellData(color: #colorLiteral(red: 1, green: 0.6243972182, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 1, green: 0.9899911284, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)), cellData(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))]
+        arrCellData = [cellData(color: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 1, green: 0.9419413527, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 0, green: 0.6007654667, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 0, green: 0.04544427991, blue: 1, alpha: 1)), cellData(color: #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)), cellData(color: #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)), cellData(color: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)),  cellData(color: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)), cellData(color: #colorLiteral(red: 0.5019607843, green: 0.7647058824, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 0.4862745098, green: 0.2784313725, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 0.9490196078, green: 0.8117647059, blue: 0.6156862745, alpha: 1)), cellData(color: #colorLiteral(red: 1, green: 0.6243972182, blue: 0, alpha: 1)), cellData(color: #colorLiteral(red: 0.5488560796, green: 0.5548830032, blue: 0.604912281, alpha: 1)), cellData(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))]
         
         let number = Int.random(in: 0 ... categorySketch.count - 1)
         sketchPlace.image = categorySketch[number]
@@ -67,7 +69,9 @@ class ColoringViewController: UIViewController {
     }
     
     @IBAction func eraserButton(_ sender: Any) {
-        
+        erase = true
+        self.canvasView.strokeColor = UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+        collectionView.reloadData()
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -95,6 +99,7 @@ extension ColoringViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         self.canvasView.strokeColor = arrCellData[indexPath.row].color
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -17,9 +17,8 @@ class ColorCVCell: UICollectionViewCell {
             print(isSelected)
             if !isSelected {
                 layer.cornerRadius = 10
-                
             } else {
-                layer.cornerRadius = 50
+                layer.cornerRadius = 30
             }
         }
     }

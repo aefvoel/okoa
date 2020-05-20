@@ -102,6 +102,7 @@
                                         <rect key="frame" x="666" y="344" width="178" height="41"/>
                                         <state key="normal" backgroundImage="let's go button"/>
                                         <connections>
+                                            <action selector="leggo:" destination="Sse-C4-oTy" eventType="touchUpInside" id="kAs-oc-5HI"/>
                                             <action selector="onLetsGoBtn:" destination="Sse-C4-oTy" eventType="touchUpInside" id="2eQ-sK-eKs"/>
                                             <segue destination="Ciz-tC-stb" kind="show" identifier="to_menu" id="Uhm-66-Z6n"/>
                                         </connections>
@@ -322,21 +323,21 @@
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM3-SQ-uIs">
+                                        <rect key="frame" x="-55" y="-28" width="49" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="Group" backgroundImage="Group">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backArrowBtnDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="CZm-y5-Lhx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM3-SQ-uIs">
-                                <rect key="frame" x="0.0" y="-29" width="79" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="backarrow" backgroundImage="backarrow">
-                                    <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="backArrowBtnDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="CZm-y5-Lhx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ivy-Yy-X5H"/>
@@ -351,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCX-6q-06o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2369" y="1877"/>
+            <point key="canvasLocation" x="2368.5267857142858" y="1876.8115942028987"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="sqO-XS-tlo">
@@ -515,6 +516,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pick your color-coloring page" translatesAutoresizingMaskIntoConstraints="NO" id="EmC-Pe-UNA">
+                                <rect key="frame" x="91" y="52" width="130" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K61-TP-kC2">
                                 <rect key="frame" x="139" y="321" width="34" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -524,7 +529,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnU-PM-suX">
-                                <rect key="frame" x="782" y="61" width="40" height="36"/>
+                                <rect key="frame" x="782" y="52" width="40" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="eraser button - cp"/>
                                 <connections>
@@ -541,7 +546,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9S-wo-1Kb">
-                                <rect key="frame" x="740" y="61" width="34" height="33"/>
+                                <rect key="frame" x="740" y="52" width="34" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="redo button-cp"/>
                                 <connections>
@@ -549,7 +554,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfL-f2-16A">
-                                <rect key="frame" x="656" y="61" width="34" height="33"/>
+                                <rect key="frame" x="656" y="52" width="34" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="undo button-cp"/>
                                 <connections>
@@ -557,7 +562,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KK-Zz-pjV">
-                                <rect key="frame" x="694" y="58" width="41" height="38"/>
+                                <rect key="frame" x="694" y="49" width="41" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="reset button-cp"/>
                                 <connections>
@@ -592,7 +597,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Lets " translatesAutoresizingMaskIntoConstraints="NO" id="n4Y-Wk-ggq">
-                                        <rect key="frame" x="-22" y="-91" width="227" height="128"/>
+                                        <rect key="frame" x="-22" y="-93" width="216" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4N-OQ-9Or">
@@ -603,12 +608,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8So-vk-Pci">
-                                <rect key="frame" x="0.0" y="-29" width="79" height="116"/>
+                                <rect key="frame" x="27" y="22" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="backarrow" backgroundImage="backarrow">
-                                    <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="Group" backgroundImage="Group">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="backArrowBtnDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="mUk-my-WOk"/>
@@ -633,10 +638,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lZZ-Mw-mym"/>
+        <segue reference="SRA-CO-lfO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Coloring page" width="896" height="414"/>
+        <image name="Group" width="49" height="28"/>
         <image name="Lets " width="210" height="46"/>
         <image name="alert right" width="406" height="160"/>
         <image name="alert wrong" width="406" height="160"/>
@@ -655,6 +661,7 @@
         <image name="iPhone 11 - OB start" width="896" height="414"/>
         <image name="let's go button" width="178" height="41"/>
         <image name="mascot" width="171" height="181"/>
+        <image name="pick your color-coloring page" width="125" height="103"/>
         <image name="redo button-cp" width="26" height="22"/>
         <image name="reset button-cp" width="36" height="35"/>
         <image name="share" width="26" height="36"/>

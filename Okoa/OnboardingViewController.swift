@@ -14,9 +14,14 @@ class OnboardingViewController: UIViewController {
     @IBAction func onLetsGoBtn(_ sender: UIButton) {
         performSegue(withIdentifier: "to_menu", sender: self)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func leggo(_ sender: Any) {
+        
     }
     /*
     // MARK: - Navigation
