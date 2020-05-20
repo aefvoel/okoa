@@ -60,6 +60,11 @@ class ColoringViewController: UIViewController {
         let sketchView = MyView(frame: sketchPlace.bounds, canvas: canvas)
         sketchView.tag = 100
         sketchPlace.addSubview(sketchView)
+//        sketchPlace.sendSubviewToBack(sketchView)
+        view.bringSubviewToFront(canvasView)
+        
+        canvasView.sendSubviewToBack(sketchPlace)
+        canvasView.backgroundColor = UIColor(white: 1, alpha: 0.5)
     }
     
     @IBAction func btnToResult(_ sender: UIButton) {
@@ -126,7 +131,8 @@ extension ColoringViewController: UICollectionViewDelegate, UICollectionViewData
         if let destination = segue.destination as? ResultViewController {
             destination.canvasView = canvasView
             destination.imageFromSegue = canvasView.savePic()
-            destination.imageName = category
+//            destination.imageName = category
+            destination.imageName = canvas
             destination.categoryLabel = categoryLabel
         }
     }
