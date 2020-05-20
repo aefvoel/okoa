@@ -34,7 +34,7 @@ class ResultViewController: UIViewController {
     
 //        loadImage(named: imageName)
         imageResult.setImage(imageFromSegue, for: .normal)
-        resultNameLabel.text = imageName
+        resultNameLabel.text = imageName.capitalizingFirstLetter()
         createEngine()
     }
     
@@ -172,4 +172,12 @@ extension ResultViewController {
     }
 }
 
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
 
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}
