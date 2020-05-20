@@ -27,6 +27,7 @@ class CanvasView: UIView {
     var strokeWidth: CGFloat = 10.0
     var strokeColor: UIColor = .black
     var strokeOpacity:  CGFloat = 10.0
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         

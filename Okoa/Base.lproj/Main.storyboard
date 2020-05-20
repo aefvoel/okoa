@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -280,7 +280,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXJ-ro-OlO">
-                                        <rect key="frame" x="665" y="3" width="77" height="45"/>
+                                        <rect key="frame" x="706" y="3" width="36" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="4oY-Ma-3K3"/>
                                         </constraints>
@@ -290,7 +290,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gec-db-jRw">
-                                        <rect key="frame" x="665" y="229" width="82" height="76"/>
+                                        <rect key="frame" x="706" y="267" width="41" height="38"/>
                                         <state key="normal" image="arrows"/>
                                         <connections>
                                             <action selector="nextBtnDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="O2q-0c-mPw"/>
@@ -432,7 +432,7 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFc-jN-Jev">
-                                        <rect key="frame" x="210" y="275" width="238" height="30"/>
+                                        <rect key="frame" x="210" y="275" width="119" height="30"/>
                                         <fontDescription key="fontDescription" name="KurriIslandPERSONAL-Light" family="Kurri Island PERSONAL" pointSize="17"/>
                                         <state key="normal" backgroundImage="button choices-miniquiz">
                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -442,7 +442,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7T-jw-yDC">
-                                        <rect key="frame" x="311" y="275" width="238" height="30"/>
+                                        <rect key="frame" x="430" y="275" width="119" height="30"/>
                                         <fontDescription key="fontDescription" name="KurriIslandPERSONAL-Light" family="Kurri Island PERSONAL" pointSize="17"/>
                                         <state key="normal" backgroundImage="button choices-miniquiz">
                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -593,7 +593,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coloring page" translatesAutoresizingMaskIntoConstraints="NO" id="IJY-ZH-KmV">
-                                <rect key="frame" x="-448" y="0.0" width="1792" height="828"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K61-TP-kC2">
                                 <rect key="frame" x="139" y="321" width="34" height="33"/>
@@ -682,7 +682,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8So-vk-Pci">
-                                <rect key="frame" x="-448" y="-29" width="79" height="116"/>
+                                <rect key="frame" x="0.0" y="-29" width="79" height="116"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="79" id="rhr-bR-3Yl"/>
@@ -706,18 +706,16 @@
                                             <constraint firstAttribute="width" constant="227" id="ZeL-um-p6Y"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g4N-OQ-9Or">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yE8-DB-cQN">
                                         <rect key="frame" x="0.0" y="0.0" width="420" height="248"/>
-                                    </imageView>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="n4Y-Wk-ggq" firstAttribute="top" secondItem="6SC-HD-1lZ" secondAttribute="top" constant="-91" id="47p-MW-SHT"/>
-                                    <constraint firstItem="g4N-OQ-9Or" firstAttribute="centerX" secondItem="6SC-HD-1lZ" secondAttribute="centerX" id="9oV-ke-Ylj"/>
-                                    <constraint firstItem="g4N-OQ-9Or" firstAttribute="leading" secondItem="6SC-HD-1lZ" secondAttribute="leading" id="AT6-cg-FF1"/>
-                                    <constraint firstItem="g4N-OQ-9Or" firstAttribute="centerY" secondItem="6SC-HD-1lZ" secondAttribute="centerY" id="Iz4-sR-Wam"/>
                                     <constraint firstItem="n4Y-Wk-ggq" firstAttribute="leading" secondItem="6SC-HD-1lZ" secondAttribute="leading" constant="-22" id="gGN-0A-POY"/>
-                                    <constraint firstItem="g4N-OQ-9Or" firstAttribute="top" secondItem="6SC-HD-1lZ" secondAttribute="top" id="n3R-Mf-QGv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -765,7 +763,7 @@
                         <outlet property="backgroundView" destination="IJY-ZH-KmV" id="7yv-mT-ur5"/>
                         <outlet property="canvasView" destination="6SC-HD-1lZ" id="TMZ-n0-yoy"/>
                         <outlet property="collectionView" destination="cwb-DY-fWs" id="Bdb-mR-qV5"/>
-                        <outlet property="sketchPlace" destination="g4N-OQ-9Or" id="ZOI-JJ-M3g"/>
+                        <outlet property="sketchPlace" destination="yE8-DB-cQN" id="kH4-Jc-Fll"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJC-xu-lm0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -773,6 +771,10 @@
             <point key="canvasLocation" x="1593.75" y="1876.8115942028987"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="AsT-Xg-dFa"/>
+        <segue reference="SRA-CO-lfO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Coloring page" width="896" height="414"/>
         <image name="Lets " width="210" height="46"/>
@@ -800,7 +802,4 @@
         <image name="undo button-cp" width="27" height="22"/>
         <image name="vehicles-button" width="170" height="178"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="SRA-CO-lfO"/>
-    </inferredMetricsTieBreakers>
 </document>
