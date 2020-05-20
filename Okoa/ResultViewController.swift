@@ -11,12 +11,15 @@ import AVFoundation
 import CoreHaptics
 
 class ResultViewController: UIViewController {
-
+    
+    @IBOutlet weak var canvasView: CanvasView!
     @IBOutlet weak var imageResultView: UIView!
     @IBOutlet weak var imageResult: UIButton!
     @IBOutlet weak var resultNameLabel: UILabel!
     
-    var imageName: String = "dog"
+    var imageFromSegue: UIImage!
+    var categoryLabel: [String]!
+    var imageName: String = ""
     var imageColouredResult: UIImage!
     
     var engine: CHHapticEngine!
@@ -28,22 +31,43 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadImage(named: imageName)
+    
+//        loadImage(named: imageName)
+        imageResult.setImage(imageFromSegue, for: .normal)
+        resultNameLabel.text = imageName.capitalizingFirstLetter()
         createEngine()
     }
     
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? QuizViewController {
+            destination.imageFromSegue = imageFromSegue
+            destination.labelFromSegue = resultNameLabel.text
+            destination.categoryArray = categoryLabel
+        }
+    }
+    
+    @objc func imagesaved(_ image: UIImage, didFinishSavingWithError error: Error?, contextType: UnsafeRawPointer){
+        if error != nil {
+            print("Unable to save image.")
+        }else{
+            print("Image saved!")
+        }
+    }
+    
     @IBAction func shareBtnDidPressed(_ sender: Any) {
+//        UIImageWriteToSavedPhotosAlbum(imageFromSegue, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
         let items = [imageResult.currentImage]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(ac, animated: true)
     }
     
     @IBAction func backArrowBtnDidPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func homeBtnDidPressed(_ sender: Any) {
+        
     }
     
     @IBAction func imageResultDidPressed(_ sender: Any) {
@@ -51,18 +75,19 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func nextBtnDidPressed(_ sender: Any) {
+        
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension ResultViewController {
@@ -75,30 +100,30 @@ extension ResultViewController {
     override open var shouldAutorotate: Bool {
         return true
     }
-   
+    
     override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
-
+    
 }
 
 extension ResultViewController {
     func createEngine() {
-       do {
-           engine = try CHHapticEngine()
-       } catch let error {
-           print("Engine Creation Error: \(error)")
-       }
-       
-       if engine == nil {
-           print("Failed to create engine!")
-       } else {
+        do {
+            engine = try CHHapticEngine()
+        } catch let error {
+            print("Engine Creation Error: \(error)")
+        }
+        
+        if engine == nil {
+            print("Failed to create engine!")
+        } else {
             do {
                 try engine.start()
             } catch {
                 print("Init fail")
             }
-        
+            
             engine.stoppedHandler = { reason in
                 print("The engine stopped for reason: \(reason.rawValue)")
                 switch reason {
@@ -111,7 +136,7 @@ extension ResultViewController {
                     print("Unknown error")
                 }
             }
-
+            
             engine.resetHandler = {
                 print("The engine reset --> Restarting now!")
                 do {
@@ -120,29 +145,39 @@ extension ResultViewController {
                     print("Failed to restart the engine: \(error)")
                 }
             }
-       }
+        }
     }
     
     func playHapticsAndSoundFile(named filename: String) {
-          guard let path = Bundle.main.path(forResource: filename, ofType: "ahap") else { return }
-          guard let url = Bundle.main.url(forResource: filename, withExtension: "wav") else { return }
-          
-          do {
-               try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-               try AVAudioSession.sharedInstance().setActive(true)
+        guard let path = Bundle.main.path(forResource: filename, ofType: "ahap") else { return }
+        guard let url = Bundle.main.url(forResource: filename, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            guard let player = player else { return }
+            player.play()
+            
+            if supportsHaptics {
+                try engine.start()
+                
+                try engine.playPattern(from: URL(fileURLWithPath: path))
+            }
+            
+        } catch {
+            print("An error occured playing \(filename): \(error).")
+        }
+    }
+}
 
-               player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
-               guard let player = player else { return }
-               player.play()
-               
-               if supportsHaptics {
-                   try engine.start()
-                   
-                   try engine.playPattern(from: URL(fileURLWithPath: path))
-               }
-              
-          } catch {
-              print("An error occured playing \(filename): \(error).")
-          }
-       }
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
 }
