@@ -12,8 +12,14 @@ class OnboardingViewController: UIViewController {
 
     @IBOutlet weak var tfName: UITextField!
     @IBAction func onLetsGoBtn(_ sender: UIButton) {
-        UserDefaults.standard.set(tfName.text, forKey: "childName")
-        performSegue(withIdentifier: "to_menu", sender: self)
+        if tfName.text != "" {
+            UserDefaults.standard.set(tfName.text, forKey: "childName")
+            UserDefaults.standard.set(true, forKey: "isLaunched")
+            performSegue(withIdentifier: "to_menu", sender: self)
+        }else {
+            showAlert()
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -21,8 +27,10 @@ class OnboardingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func leggo(_ sender: Any) {
-        
+    func showAlert(){
+        let alert = UIAlertController(title: "Alert", message: "Please enter your name.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
