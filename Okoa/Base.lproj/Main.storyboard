@@ -707,18 +707,16 @@
                                             <constraint firstAttribute="width" constant="227" id="ZeL-um-p6Y"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g4N-OQ-9Or">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-IS-qr0">
                                         <rect key="frame" x="0.0" y="0.0" width="420" height="248"/>
-                                    </imageView>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="n4Y-Wk-ggq" firstAttribute="top" secondItem="6SC-HD-1lZ" secondAttribute="top" constant="-91" id="47p-MW-SHT"/>
-                                    <constraint firstItem="g4N-OQ-9Or" firstAttribute="centerX" secondItem="6SC-HD-1lZ" secondAttribute="centerX" id="9oV-ke-Ylj"/>
-                                    <constraint firstItem="g4N-OQ-9Or" firstAttribute="leading" secondItem="6SC-HD-1lZ" secondAttribute="leading" id="AT6-cg-FF1"/>
-                                    <constraint firstItem="g4N-OQ-9Or" firstAttribute="centerY" secondItem="6SC-HD-1lZ" secondAttribute="centerY" id="Iz4-sR-Wam"/>
                                     <constraint firstItem="n4Y-Wk-ggq" firstAttribute="leading" secondItem="6SC-HD-1lZ" secondAttribute="leading" constant="-22" id="gGN-0A-POY"/>
-                                    <constraint firstItem="g4N-OQ-9Or" firstAttribute="top" secondItem="6SC-HD-1lZ" secondAttribute="top" id="n3R-Mf-QGv"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -766,7 +764,7 @@
                         <outlet property="backgroundView" destination="IJY-ZH-KmV" id="7yv-mT-ur5"/>
                         <outlet property="canvasView" destination="6SC-HD-1lZ" id="TMZ-n0-yoy"/>
                         <outlet property="collectionView" destination="cwb-DY-fWs" id="Bdb-mR-qV5"/>
-                        <outlet property="sketchPlace" destination="g4N-OQ-9Or" id="ZOI-JJ-M3g"/>
+                        <outlet property="sketchPlace" destination="P9b-IS-qr0" id="CL5-uI-0A8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJC-xu-lm0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
