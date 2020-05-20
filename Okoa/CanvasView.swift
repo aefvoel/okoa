@@ -17,15 +17,16 @@ struct TouchPointAndColor  {
     init(color: UIColor, points: [CGPoint]){
         self.color = color
         self.points = points
-    }    
+    }
+    
 }
-
-class CanvasView: UIImageView {
+class CanvasView: UIView {
     
     var lines = [TouchPointAndColor]()
-    var strokeWidth: CGFloat = 1.0
+    var temp = [TouchPointAndColor]()
+    var strokeWidth: CGFloat = 10.0
     var strokeColor: UIColor = .black
-    var strokeOpacity:  CGFloat = 1.0
+    var strokeOpacity:  CGFloat = 10.0
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
@@ -38,8 +39,8 @@ class CanvasView: UIImageView {
                 } else{
                     context.addLine(to: p)
                 }
-                context.setStrokeColor(line.color?.withAlphaComponent(line.opacity ?? 1.0).cgColor ?? UIColor.black.cgColor)
-                context.setLineWidth(line.width ?? 1.0)
+                context.setStrokeColor(line.color?.withAlphaComponent(line.opacity ?? 10.0).cgColor ?? UIColor.black.cgColor)
+                context.setLineWidth(line.width ?? 10.0)
             }
             context.setLineCap(.round)
             context.strokePath()
@@ -51,33 +52,40 @@ class CanvasView: UIImageView {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first?.location(in: nil) else {
+        guard let touch = touches.first?.location(in: self) else {
             return
         }
+        
         
         guard var lastPoint = lines.popLast() else{
             return
         }
-        
         lastPoint.points?.append(touch)
         lastPoint.color = strokeColor
         lastPoint.width = strokeWidth
         lastPoint.opacity = strokeOpacity
-        
         lines.append(lastPoint)
         setNeedsDisplay()
     }
     
     func clearDraw(){
-        if lines.count > 0
-        {lines.removeAll()
-        setNeedsDisplay()
+        if lines.count > 0 {
+            lines.removeAll()
+            setNeedsDisplay()
         }
     }
     
     func undoDraw(){
-        if lines.count > 0{
+        if lines.count > 0 {
+            temp.append(lines[lines.endIndex-1])
             lines.removeLast()
+            setNeedsDisplay()
+        }
+    }
+    
+    func redoDraw() {
+        if lines.count > 0 {
+            lines.append(temp[temp.endIndex-1])
             setNeedsDisplay()
         }
     }
