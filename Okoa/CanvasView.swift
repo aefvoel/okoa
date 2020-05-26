@@ -56,11 +56,13 @@ class CanvasView: UIView {
         guard let touch = touches.first?.location(in: self) else {
             return
         }
-        
-        
+
         guard var lastPoint = lines.popLast() else{
             return
         }
+        
+        // if else
+        
         lastPoint.points?.append(touch)
         lastPoint.color = strokeColor
         lastPoint.width = strokeWidth
