@@ -20,13 +20,6 @@ class ColoringViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var category: String!
-    var categoryLabel: [String]!
-    var categorySketch: [UIImage]!
-    var categoryFromSegue: [UIImage]!{
-        didSet{
-            categorySketch = categoryFromSegue
-        }
-    }
     var categoryId: Int!
     
     var arrCellData = [cellData]()
@@ -79,8 +72,6 @@ class ColoringViewController: UIViewController {
         sketchView.backgroundColor = UIColor(white: 1, alpha: 0.1)
         sketchPlace.addSubview(sketchView)
         
-        
-        category = categoryLabel[number]
         canvasView.clearDraw()
     }
     
@@ -134,7 +125,7 @@ extension ColoringViewController: UICollectionViewDelegate, UICollectionViewData
             destination.imageFromSegue = canvasView.savePic()
 //            destination.imageName = category
             destination.imageName = canvas
-            destination.categoryLabel = categoryLabel
+            destination.categoryLabel = canvases[categoryId]
         }
     }
 }

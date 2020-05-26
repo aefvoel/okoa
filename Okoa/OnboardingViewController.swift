@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var tfName: UITextField!
     @IBAction func onLetsGoBtn(_ sender: UIButton) {
@@ -24,6 +24,7 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tfName.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -32,6 +33,12 @@ class OnboardingViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true;
+    }
+    
     /*
     // MARK: - Navigation
 

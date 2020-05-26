@@ -42,7 +42,7 @@ class ResultViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? QuizViewController {
             destination.imageFromSegue = imageFromSegue
-            destination.labelFromSegue = resultNameLabel.text
+            destination.labelFromSegue = imageName
             destination.categoryArray = categoryLabel
         }
     }

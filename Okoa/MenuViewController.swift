@@ -24,22 +24,16 @@ class MenuViewController: UIViewController {
     
 
     @IBAction func btnVehicles(_ sender: UIButton) {
-        categorySketch = [#imageLiteral(resourceName: "Sepeda"), #imageLiteral(resourceName: "Pesawat"), #imageLiteral(resourceName: "Bis"), #imageLiteral(resourceName: "Mobil")]
-        categoryLabel = ["Bicycle", "Airplane", "Bus", "Car"]
         categoryId = 0
         performSegue(withIdentifier: "to_coloring", sender: self)
     }
     
     @IBAction func btnAnimals(_ sender: UIButton) {
-        categorySketch = [#imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "Dolphin"), #imageLiteral(resourceName: "Gajah"), #imageLiteral(resourceName: "Kucing")]
-        categoryLabel = ["Dog", "Dolphin", "Elephant", "Cat"]
         categoryId = 1
         performSegue(withIdentifier: "to_coloring", sender: self)
     }
     
     @IBAction func btnFruits(_ sender: UIButton) {
-        categorySketch = [#imageLiteral(resourceName: "Brokoli"), #imageLiteral(resourceName: "Banana"), #imageLiteral(resourceName: "Anggur"), #imageLiteral(resourceName: "Apel")]
-        categoryLabel = ["Broccoli", "Banana", "Grape", "Apple", "Carrot"]
         categoryId = 2
         performSegue(withIdentifier: "to_coloring", sender: self)
     }
@@ -47,8 +41,6 @@ class MenuViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ColoringViewController {
             destination.categoryId = categoryId
-            destination.categoryFromSegue = categorySketch
-            destination.categoryLabel = categoryLabel
         }
     }
     /*
