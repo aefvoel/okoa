@@ -9,26 +9,62 @@
 
 import UIKit
 
+@objc(OkoaSketchResizingBehavior)
+public enum ResizingBehavior: Int {
+    case aspectFit /// The content is proportionally resized to fit into the target rectangle.
+    case aspectFill /// The content is proportionally resized to completely fill the target rectangle.
+    case stretch /// The content is stretched to match the entire target rectangle.
+    case center /// The content is centered in the target rectangle, but it is NOT resized.
+    case normal /// Normal content size
+
+    public func apply(rect: CGRect, target: CGRect) -> CGRect {
+        if rect == target || target == CGRect.zero {
+            return rect
+        }
+
+        var scales = CGSize.zero
+        scales.width = abs(target.width / rect.width)
+        scales.height = abs(target.height / rect.height)
+
+        switch self {
+            case .aspectFit:
+                scales.width = min(scales.width, scales.height)
+                scales.height = scales.width
+            case .aspectFill:
+                scales.width = max(scales.width, scales.height)
+                scales.height = scales.width
+            case .stretch:
+                break
+            case .center:
+                scales.width = 1
+                scales.height = 1
+            case .normal:
+                scales.width = 0.6
+                scales.height = 0.5
+        }
+
+        var result = rect.standardized
+        result.size.width *= scales.width
+        result.size.height *= scales.height
+        result.origin.x = target.minX + (target.width - result.width) / 2
+        result.origin.y = target.minY + (target.height - result.height) / 2
+        return result
+    }
+}
+
 public class OkoaSketch : NSObject {
 
-    //// Drawing Methods
-
-    @objc dynamic public class func drawPlaneCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 787, height: 564), resizing: ResizingBehavior = .aspectFill) {
-        //// General Declarations
-        let context = UIGraphicsGetCurrentContext()!
-        
-        //// Resize to Target Frame
+    @objc dynamic public class func setResizingFor(context: CGContext,widthRatio:Int, heightRatio: Int,targetFrame: CGRect,resizing: ResizingBehavior = .aspectFill, draw: (CGRect,CGFloat,CGFloat)->()){
         context.saveGState()
-        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 787, height: 564), target: targetFrame)
+        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: widthRatio, height: heightRatio), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-        context.scaleBy(x: resizedFrame.width / 787, y: resizedFrame.height / 564)
+        context.scaleBy(x: resizedFrame.width / CGFloat(widthRatio), y: resizedFrame.height / CGFloat(heightRatio))
+        draw(resizedFrame,CGFloat(widthRatio),CGFloat(heightRatio))
+        context.restoreGState()
+    }
 
-
-        //// Color Declarations
+    @objc dynamic public class func drawPlaneCanvas() -> UIBezierPath{
         let fillColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
-
-        //// Group
-        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: 325.46, y: 135.37))
         bezierPath.addCurve(to: CGPoint(x: 316.46, y: 139.95), controlPoint1: CGPoint(x: 321.41, y: 136.42), controlPoint2: CGPoint(x: 319.31, y: 137.47))
@@ -276,20 +312,23 @@ public class OkoaSketch : NSObject {
         fillColor.setFill()
         bezier4Path.fill()
         
-        context.restoreGState()
+        return bezierPath
     }
+    
+    static func drawBox() -> UIBezierPath{
+        let bezierPath = UIBezierPath()
+        bezierPath.move(to: CGPoint(x: 300, y: 20))
+        bezierPath.addLine(to: CGPoint(x: 600, y: 20))
+        bezierPath.addLine(to: CGPoint(x: 600, y: 300))
+        bezierPath.addLine(to: CGPoint(x: 300, y: 300))
+        bezierPath.close()
+        bezierPath.stroke()
+        return bezierPath
+    }
+    
 
-    @objc dynamic public class func drawBroccoliCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 640, height: 694), resizing: ResizingBehavior = .aspectFill) {
-        //// General Declarations
-        let context = UIGraphicsGetCurrentContext()!
+    @objc dynamic public class func drawBroccoliCanvas() -> UIBezierPath{
         
-        //// Resize to Target Frame
-        context.saveGState()
-        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 640, height: 694), target: targetFrame)
-        context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-        context.scaleBy(x: resizedFrame.width / 640, y: resizedFrame.height / 694)
-
-
         //// Color Declarations
         let fillColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
 
@@ -613,7 +652,7 @@ public class OkoaSketch : NSObject {
         fillColor.setFill()
         bezier2Path.fill()
         
-        context.restoreGState()
+        return bezierPath
 
     }
 
@@ -1834,6 +1873,7 @@ public class OkoaSketch : NSObject {
         let context = UIGraphicsGetCurrentContext()!
         
         //// Resize to Target Frame
+        
         context.saveGState()
         let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 666, height: 667), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
@@ -5362,51 +5402,5 @@ public class OkoaSketch : NSObject {
         
         context.restoreGState()
 
-    }
-
-
-
-
-    @objc(OkoaSketchResizingBehavior)
-    public enum ResizingBehavior: Int {
-        case aspectFit /// The content is proportionally resized to fit into the target rectangle.
-        case aspectFill /// The content is proportionally resized to completely fill the target rectangle.
-        case stretch /// The content is stretched to match the entire target rectangle.
-        case center /// The content is centered in the target rectangle, but it is NOT resized.
-        case normal /// Normal content size
-
-        public func apply(rect: CGRect, target: CGRect) -> CGRect {
-            if rect == target || target == CGRect.zero {
-                return rect
-            }
-
-            var scales = CGSize.zero
-            scales.width = abs(target.width / rect.width)
-            scales.height = abs(target.height / rect.height)
-
-            switch self {
-                case .aspectFit:
-                    scales.width = min(scales.width, scales.height)
-                    scales.height = scales.width
-                case .aspectFill:
-                    scales.width = max(scales.width, scales.height)
-                    scales.height = scales.width
-                case .stretch:
-                    break
-                case .center:
-                    scales.width = 1
-                    scales.height = 1
-                case .normal:
-                    scales.width = 0.6
-                    scales.height = 0.5
-            }
-
-            var result = rect.standardized
-            result.size.width *= scales.width
-            result.size.height *= scales.height
-            result.origin.x = target.minX + (target.width - result.width) / 2
-            result.origin.y = target.minY + (target.height - result.height) / 2
-            return result
-        }
     }
 }

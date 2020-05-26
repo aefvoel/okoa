@@ -19,6 +19,9 @@ class ColoringViewController: UIViewController {
     @IBOutlet weak var sketchPlace: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //Current Active sketch that the canvas are using
+    var activeSketch: MyView!
+    
     var category: String!
     var categoryId: Int!
     
@@ -28,7 +31,7 @@ class ColoringViewController: UIViewController {
     var erase = false
     
     var canvas = "dog"
-    let canvases = [["car", "bus", "plane", "bike"], ["dog", "dolphin", "elephant", "cat"], ["grape", "apple", "banana", "carrot", "broccoli"]]
+    let canvases = [["plane"], ["dog", "dolphin", "elephant", "cat"], ["broccoli"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +53,12 @@ class ColoringViewController: UIViewController {
         let number = Int.random(in: 0 ... canvases[categoryId].count - 1)
         canvas = canvases[categoryId][number]
         
-        let sketchView = MyView(frame: sketchPlace.bounds, canvas: canvas)
-        sketchPlace.addSubview(sketchView)
+        activeSketch = MyView(frame: sketchPlace.bounds, canvas: canvas,canvasView: self.canvasView)
+        
+        sketchPlace.addSubview(activeSketch)
         
         sketchPlace.backgroundColor = UIColor(white: 1, alpha: 0.1)
-        sketchView.backgroundColor = UIColor(white: 1, alpha: 0.1)
+        
     }
     
     @IBAction func btnToResult(_ sender: UIButton) {
@@ -66,11 +70,12 @@ class ColoringViewController: UIViewController {
         
         canvas = canvases[categoryId][number]
         
-        let sketchView = MyView(frame: sketchPlace.bounds, canvas: canvas)
+        activeSketch.removeFromSuperview()
+        activeSketch = MyView(frame: sketchPlace.bounds, canvas: canvas)
+        
         
         sketchPlace.backgroundColor = UIColor(white: 1, alpha: 0.1)
-        sketchView.backgroundColor = UIColor(white: 1, alpha: 0.1)
-        sketchPlace.addSubview(sketchView)
+        sketchPlace.addSubview(activeSketch)
         
         canvasView.clearDraw()
     }
