@@ -18,8 +18,8 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelName.text = UserDefaults.standard.string(forKey: "childName")
-        // Do any additional setup after loading the view.
+        let name = UserDefaults.standard.string(forKey: "childName")
+        labelName.text = "Hello, \(name!.capitalizingFirstLetter())"
     }
     
 

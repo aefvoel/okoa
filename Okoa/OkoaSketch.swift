@@ -13,7 +13,7 @@ public class OkoaSketch : NSObject {
 
     //// Drawing Methods
 
-    @objc dynamic public class func drawPlaneCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 787, height: 564), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawPlaneCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 787, height: 564), resizing: ResizingBehavior = .aspectFill) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -277,10 +277,9 @@ public class OkoaSketch : NSObject {
         bezier4Path.fill()
         
         context.restoreGState()
-
     }
 
-    @objc dynamic public class func drawBroccoliCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 640, height: 694), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawBroccoliCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 640, height: 694), resizing: ResizingBehavior = .aspectFill) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -618,7 +617,7 @@ public class OkoaSketch : NSObject {
 
     }
 
-    @objc dynamic public class func drawBananaCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 734, height: 606), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawBananaCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 734, height: 606), resizing: ResizingBehavior = .aspectFill) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -838,7 +837,7 @@ public class OkoaSketch : NSObject {
 
     }
 
-    @objc dynamic public class func drawBikeCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 862, height: 515), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawBikeCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 862, height: 515), resizing: ResizingBehavior = .aspectFill) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -1432,7 +1431,7 @@ public class OkoaSketch : NSObject {
 
     }
 
-    @objc dynamic public class func drawAppleCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 740, height: 599), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawAppleCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 740, height: 599), resizing: ResizingBehavior = .aspectFill) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -1830,7 +1829,7 @@ public class OkoaSketch : NSObject {
 
     }
 
-    @objc dynamic public class func drawGrapeCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 666, height: 667), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawGrapeCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 666, height: 667), resizing: ResizingBehavior = .aspectFill) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -2400,7 +2399,7 @@ public class OkoaSketch : NSObject {
 
     }
 
-    @objc dynamic public class func drawCatCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 760, height: 584), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawCatCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 760, height: 584), resizing: ResizingBehavior = .aspectFill) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -2824,7 +2823,7 @@ public class OkoaSketch : NSObject {
 
     }
 
-    @objc dynamic public class func drawDolphinCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 798, height: 556), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawDolphinCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 798, height: 556), resizing: ResizingBehavior = .aspectFill) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -3057,7 +3056,7 @@ public class OkoaSketch : NSObject {
 
     }
 
-    @objc dynamic public class func drawDogCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 610, height: 728), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawDogCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 610, height: 728), resizing: ResizingBehavior = .normal) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -3387,7 +3386,7 @@ public class OkoaSketch : NSObject {
 
     }
 
-    @objc dynamic public class func drawElephantCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 774, height: 574), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawElephantCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 774, height: 574), resizing: ResizingBehavior = .aspectFill) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -3997,7 +3996,7 @@ public class OkoaSketch : NSObject {
 
     }
 
-    @objc dynamic public class func drawCarCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 1003, height: 443), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawCarCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 1003, height: 443), resizing: ResizingBehavior = .aspectFill) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -4490,7 +4489,7 @@ public class OkoaSketch : NSObject {
 
     }
 
-    @objc dynamic public class func drawBusCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 738, height: 602), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawBusCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 738, height: 602), resizing: ResizingBehavior = .aspectFill) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -5134,7 +5133,7 @@ public class OkoaSketch : NSObject {
 
     }
 
-    @objc dynamic public class func drawCarrotCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 580, height: 766), resizing: ResizingBehavior = .aspectFit) {
+    @objc dynamic public class func drawCarrotCanvas(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 580, height: 766), resizing: ResizingBehavior = .normal) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -5374,6 +5373,7 @@ public class OkoaSketch : NSObject {
         case aspectFill /// The content is proportionally resized to completely fill the target rectangle.
         case stretch /// The content is stretched to match the entire target rectangle.
         case center /// The content is centered in the target rectangle, but it is NOT resized.
+        case normal /// Normal content size
 
         public func apply(rect: CGRect, target: CGRect) -> CGRect {
             if rect == target || target == CGRect.zero {
@@ -5396,6 +5396,9 @@ public class OkoaSketch : NSObject {
                 case .center:
                     scales.width = 1
                     scales.height = 1
+                case .normal:
+                    scales.width = 0.6
+                    scales.height = 0.5
             }
 
             var result = rect.standardized
