@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -253,7 +253,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgr CP" translatesAutoresizingMaskIntoConstraints="NO" id="sne-Xv-Oak">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414.00000000000006"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5L-rN-FlI">
                                 <rect key="frame" x="69" y="48" width="758" height="318"/>
@@ -395,7 +395,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgr CP" translatesAutoresizingMaskIntoConstraints="NO" id="1hm-vC-Xfb">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414.00000000000006"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j63-ar-E0d">
                                 <rect key="frame" x="69" y="48" width="758" height="318"/>
@@ -790,6 +790,9 @@
             <point key="canvasLocation" x="1593.75" y="1876.8115942028987"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lZZ-Mw-mym"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Coloring page" width="896" height="414"/>
         <image name="Lets " width="210" height="46"/>
@@ -819,7 +822,4 @@
         <image name="undo button-cp" width="27" height="22"/>
         <image name="vehicles-button" width="170" height="178"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="lZZ-Mw-mym"/>
-    </inferredMetricsTieBreakers>
 </document>

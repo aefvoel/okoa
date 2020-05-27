@@ -41,25 +41,29 @@ class QuizViewController: UIViewController {
         if let index = categoryArray.firstIndex(of: labelFromSegue){
             categoryArray.remove(at: index)
         }
+        
         choices.append(categoryArray[Int.random(in: 0 ... categoryArray.count - 1)])
         choices.append(labelFromSegue)
         
         categoryImg.setImage(imageFromSegue, for: .normal)
         firstChoice.setTitle(randomQuestion(), for: .normal)
+        
         if let i = choices.firstIndex(of: temp){
             choices.remove(at: i)
         }
+        
         secondChoice.setTitle(randomQuestion(), for: .normal)
         
         firstSound.setTitle(firstChoice.titleLabel?.text, for: .normal)
         secondSound.setTitle(secondChoice.titleLabel?.text, for: .normal)
         
-        // Do any additional setup after loading the view.
+        createEngine()
     }
     
     @IBAction func btnBack(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func btnTapChoices(_ sender: UIButton) {
         if sender.title(for: .normal) == labelFromSegue {
             answerValidation(isCorrect: true)
@@ -97,6 +101,48 @@ class QuizViewController: UIViewController {
             self.present(myAlert, animated: true, completion: nil)
         }
     }
+}
+
+extension QuizViewController {
+    func createEngine() {
+        do {
+            engine = try CHHapticEngine()
+        } catch let error {
+            print("Engine Creation Error: \(error)")
+        }
+        
+        if engine == nil {
+            print("Failed to create engine!")
+        } else {
+            do {
+                try engine.start()
+            } catch {
+                print("Init fail")
+            }
+            
+            engine.stoppedHandler = { reason in
+                print("The engine stopped for reason: \(reason.rawValue)")
+                switch reason {
+                case .audioSessionInterrupt: print("Audio session interrupt")
+                case .applicationSuspended: print("Application suspended")
+                case .idleTimeout: print("Idle timeout")
+                case .systemError: print("System error")
+                case .notifyWhenFinished: print("Playback finished")
+                @unknown default:
+                    print("Unknown error")
+                }
+            }
+            
+            engine.resetHandler = {
+                print("The engine reset --> Restarting now!")
+                do {
+                    try self.engine.start()
+                } catch {
+                    print("Failed to restart the engine: \(error)")
+                }
+            }
+        }
+    }
     
     func playHapticsAndSoundFile(named filename: String) {
         guard let path = Bundle.main.path(forResource: filename, ofType: "ahap") else { return }
@@ -120,16 +166,4 @@ class QuizViewController: UIViewController {
             print("An error occured playing \(filename): \(error).")
         }
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

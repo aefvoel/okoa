@@ -71,23 +71,17 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func imageResultDidPressed(_ sender: Any) {
-        playHapticsAndSoundFile(named: "MyResources/\(imageName)")
+        let pronun = ["grape", "banana", "apple", "carrot", "broccoli"]
+        if pronun.contains(imageName) {
+            playSound(named: "MyResources/\(imageName)")
+        } else {
+            playHapticsAndSoundFile(named: "MyResources/\(imageName)")
+        }
     }
     
     @IBAction func nextBtnDidPressed(_ sender: Any) {
         
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 extension ResultViewController {
@@ -170,6 +164,22 @@ extension ResultViewController {
             print("An error occured playing \(filename): \(error).")
         }
     }
+    
+    func playSound(named filename: String) {
+        guard let url = Bundle.main.url(forResource: filename, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            guard let player = player else { return }
+            player.play()
+            
+        } catch {
+            print("An error occured playing \(filename): \(error).")
+        }
+    }
 }
 
 extension String {
@@ -179,5 +189,14 @@ extension String {
 
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
+    }
+}
+
+extension UIView {
+    func asImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { rendererContext in
+            layer.render(in: rendererContext.cgContext)
+        }
     }
 }

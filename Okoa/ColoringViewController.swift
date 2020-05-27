@@ -31,7 +31,7 @@ class ColoringViewController: UIViewController {
     var erase = false
     
     var canvas = "dog"
-    let canvases = [["plane"], ["dog", "dolphin", "elephant", "cat"], ["broccoli"]]
+    let canvases = [["airplane", "car", "bike", "bus"], ["dog", "dolphin", "elephant", "cat"], ["broccoli", "carrot", "banana", "apple"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
