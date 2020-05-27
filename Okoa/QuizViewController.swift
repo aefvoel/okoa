@@ -79,13 +79,25 @@ class QuizViewController: UIViewController {
         
     }
     
+    @IBAction func homeBtnDidPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to go back home? Your progress will be lost.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            self.performSegue(withIdentifier: "to_menu", sender: self)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func answerValidation(isCorrect: Bool){
         if isCorrect {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let myAlert = storyboard.instantiateViewController(withIdentifier: "alert_right")
             myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
             myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-            self.present(myAlert, animated: true, completion: nil)
+            self.present(myAlert, animated: true, completion: {
+                sleep(3)
+                self.performSegue(withIdentifier: "to_menu", sender: self)
+            })
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let myAlert = storyboard.instantiateViewController(withIdentifier: "alert_wrong")

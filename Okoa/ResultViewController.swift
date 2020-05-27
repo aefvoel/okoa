@@ -67,7 +67,12 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func homeBtnDidPressed(_ sender: Any) {
-        
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to go back home? Your progress will be lost.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            self.performSegue(withIdentifier: "to_menu", sender: self)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func imageResultDidPressed(_ sender: Any) {
