@@ -8,15 +8,19 @@
 
 import UIKit
 
+
+
 class MyView: UIView {
     
     var canvas: String?
+    var canvasView: CanvasView?
     
-    init(frame: CGRect, canvas: String) {
+    init(frame: CGRect, canvas: String, canvasView: CanvasView = CanvasView()) {
         self.canvas = canvas
+        self.canvasView = canvasView
         
         super.init(frame: frame)
-        backgroundColor = .white
+        backgroundColor = UIColor(white: 1, alpha: 0.1)
     }
     
     required init?(coder: NSCoder) {
@@ -25,7 +29,8 @@ class MyView: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
+
+//        let context = UIGraphicsGetCurrentContext()!
         switch canvas {
             case "grape":
                 OkoaSketch.drawGrapeCanvas(frame: self.bounds)
@@ -38,7 +43,11 @@ class MyView: UIView {
             case "bus":
                 OkoaSketch.drawBusCanvas(frame: self.bounds)
             case "broccoli":
-                OkoaSketch.drawBroccoliCanvas(frame: self.bounds)
+////                OkoaSketch.setResizingFor(context: context, widthRatio: 640, heightRatio: 694, targetFrame: bounds) { (resizeFrame, widthRatio, heightRatio) in
+////                    self.canvasView?.setDrawing(path: OkoaSketch.drawBroccoliCanvas(), resizeFrame: resizeFrame, widthRatio: widthRatio, heighRatio: heightRatio)
+////                OkoaSketch.drawBroccoliCanvas(frame: self.bounds)
+            //}
+             OkoaSketch.drawBroccoliCanvas(frame: self.bounds)
             case "dolphin":
                 OkoaSketch.drawDolphinCanvas(frame: self.bounds)
             case "elephant":
@@ -47,7 +56,11 @@ class MyView: UIView {
                 OkoaSketch.drawCatCanvas(frame: self.bounds)
             case "car":
                 OkoaSketch.drawCarCanvas(frame: self.bounds)
-            case "plane":
+            case "airplane":
+////                OkoaSketch.setResizingFor(context: context, widthRatio: 787, heightRatio: 564, targetFrame: bounds) { (resizeFrame,widthRatio,heightRatio) in
+////                    self.canvasView?.setDrawing(path: OkoaSketch.drawBox(),resizeFrame: resizeFrame, widthRatio: widthRatio, heighRatio: heightRatio)
+////                }
+////                OkoaSketch.drawPlaneCanvas(frame: self.bounds)
                 OkoaSketch.drawPlaneCanvas(frame: self.bounds)
             case "bike":
                 OkoaSketch.drawBikeCanvas(frame: self.bounds)
@@ -56,10 +69,13 @@ class MyView: UIView {
             default:
                 print("Failed to generate canvas")
         }
+//
+//        context.restoreGState()
     }
 }
 
-//Sub-classes
+//
+////Sub-classes
 class Grape: UIView {
     override func draw(_ rect: CGRect) {
         OkoaSketch.drawGrapeCanvas(frame: self.bounds)
@@ -93,6 +109,7 @@ class Bus: UIView {
 class Broccoli: UIView {
     override func draw(_ rect: CGRect) {
         OkoaSketch.drawBroccoliCanvas(frame: self.bounds)
+//        OkoaSketch.drawCarrotCanvas()
     }
 }
 
@@ -123,6 +140,7 @@ class Car: UIView {
 class Plane: UIView {
     override func draw(_ rect: CGRect) {
         OkoaSketch.drawPlaneCanvas(frame: self.bounds)
+//        OkoaSketch.drawCarCanvas(frame: self.bounds)
     }
 }
 
