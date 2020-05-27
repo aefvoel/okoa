@@ -80,7 +80,13 @@ class ColoringViewController: UIViewController {
     }
     
     @IBAction func resetButton(_ sender: Any) {
-        canvasView.clearDraw()
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to reset? Your progress will be lost.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            self.canvasView.clearDraw()
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     @IBAction func redoButton(_ sender: Any) {
@@ -94,7 +100,12 @@ class ColoringViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to go back home? Your progress will be lost.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

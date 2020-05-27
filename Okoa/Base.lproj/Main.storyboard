@@ -253,7 +253,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgr CP" translatesAutoresizingMaskIntoConstraints="NO" id="sne-Xv-Oak">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414.00000000000006"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5L-rN-FlI">
                                 <rect key="frame" x="69" y="48" width="758" height="318"/>
@@ -271,7 +271,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXJ-ro-OlO">
-                                        <rect key="frame" x="706" y="3" width="36" height="45"/>
+                                        <rect key="frame" x="665" y="3" width="77" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="4oY-Ma-3K3"/>
                                         </constraints>
@@ -281,7 +281,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gec-db-jRw">
-                                        <rect key="frame" x="706" y="267" width="41" height="38"/>
+                                        <rect key="frame" x="665" y="229" width="82" height="76"/>
                                         <state key="normal" image="arrows"/>
                                         <connections>
                                             <action selector="nextBtnDidPressed:" destination="B5T-NS-yCo" eventType="touchUpInside" id="O2q-0c-mPw"/>
@@ -395,7 +395,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgr CP" translatesAutoresizingMaskIntoConstraints="NO" id="1hm-vC-Xfb">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414.00000000000006"/>
+                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j63-ar-E0d">
                                 <rect key="frame" x="69" y="48" width="758" height="318"/>
@@ -411,19 +411,8 @@
                                             <segue destination="Ciz-tC-stb" kind="show" id="lZZ-Mw-mym"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which one is the right sound for" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deH-IX-Re9">
-                                        <rect key="frame" x="210" y="-2" width="294" height="53"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="294" id="4jf-r3-435"/>
-                                            <constraint firstAttribute="height" constant="53" id="V7S-f3-UDf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="KurriIslandPERSONAL-Light" family="Kurri Island PERSONAL" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFc-jN-Jev">
-                                        <rect key="frame" x="210" y="275" width="119" height="30"/>
+                                        <rect key="frame" x="210" y="275" width="238" height="30"/>
                                         <fontDescription key="fontDescription" name="KurriIslandPERSONAL-Light" family="Kurri Island PERSONAL" pointSize="17"/>
                                         <state key="normal" title="A" backgroundImage="button choices-miniquiz">
                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -433,7 +422,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7T-jw-yDC">
-                                        <rect key="frame" x="430" y="275" width="119" height="30"/>
+                                        <rect key="frame" x="311" y="275" width="238" height="30"/>
                                         <fontDescription key="fontDescription" name="KurriIslandPERSONAL-Light" family="Kurri Island PERSONAL" pointSize="17"/>
                                         <state key="normal" title="B" backgroundImage="button choices-miniquiz">
                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -476,10 +465,11 @@
                                             <action selector="btnTapSound:" destination="Qce-QO-7UO" eventType="touchUpInside" id="0UJ-KF-qBx"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBa-Lx-yio">
-                                        <rect key="frame" x="497" y="-2" width="160" height="53"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which one is the right sound and name for this image?" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deH-IX-Re9">
+                                        <rect key="frame" x="148" y="-9" width="463" height="53"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="160" id="pvU-ZS-nyC"/>
+                                            <constraint firstAttribute="width" constant="463" id="4jf-r3-435"/>
+                                            <constraint firstAttribute="height" constant="53" id="V7S-f3-UDf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="KurriIslandPERSONAL-Light" family="Kurri Island PERSONAL" pointSize="20"/>
                                         <nil key="textColor"/>
@@ -490,23 +480,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="ZFc-jN-Jev" firstAttribute="firstBaseline" secondItem="T7T-jw-yDC" secondAttribute="firstBaseline" id="0iK-Qg-vHZ"/>
-                                    <constraint firstItem="deH-IX-Re9" firstAttribute="leading" secondItem="BV1-ZZ-xO1" secondAttribute="trailing" constant="150" id="18O-ln-iel"/>
+                                    <constraint firstItem="deH-IX-Re9" firstAttribute="leading" secondItem="BV1-ZZ-xO1" secondAttribute="trailing" constant="88" id="18O-ln-iel"/>
                                     <constraint firstItem="bVs-PN-SYT" firstAttribute="centerY" secondItem="j63-ar-E0d" secondAttribute="centerY" constant="-26.5" id="1q1-jD-lpr"/>
                                     <constraint firstItem="ZFc-jN-Jev" firstAttribute="baseline" secondItem="T7T-jw-yDC" secondAttribute="baseline" id="27f-7O-qrF"/>
-                                    <constraint firstItem="deH-IX-Re9" firstAttribute="firstBaseline" secondItem="yBa-Lx-yio" secondAttribute="firstBaseline" id="7F0-On-RWk"/>
                                     <constraint firstItem="bVs-PN-SYT" firstAttribute="top" secondItem="j63-ar-E0d" secondAttribute="top" constant="37" id="9ds-0z-jNf"/>
-                                    <constraint firstAttribute="trailing" secondItem="yBa-Lx-yio" secondAttribute="trailing" constant="101" id="Cw5-p9-vSM"/>
                                     <constraint firstAttribute="trailing" secondItem="T7T-jw-yDC" secondAttribute="trailing" constant="209" id="HHp-r6-9BN"/>
                                     <constraint firstItem="BV1-ZZ-xO1" firstAttribute="top" secondItem="j63-ar-E0d" secondAttribute="top" constant="5" id="J0H-TC-usP"/>
                                     <constraint firstItem="ZFc-jN-Jev" firstAttribute="top" secondItem="bVs-PN-SYT" secondAttribute="bottom" constant="47" id="McW-nH-11p"/>
                                     <constraint firstItem="bVs-PN-SYT" firstAttribute="centerX" secondItem="j63-ar-E0d" secondAttribute="centerX" id="Mgv-Ea-kLk"/>
-                                    <constraint firstItem="deH-IX-Re9" firstAttribute="top" secondItem="j63-ar-E0d" secondAttribute="topMargin" constant="-10" id="MiB-wH-Mdu"/>
+                                    <constraint firstItem="deH-IX-Re9" firstAttribute="top" secondItem="j63-ar-E0d" secondAttribute="topMargin" constant="-17" id="MiB-wH-Mdu"/>
                                     <constraint firstItem="ZFc-jN-Jev" firstAttribute="bottom" secondItem="T7T-jw-yDC" secondAttribute="bottom" id="TGU-yT-prD"/>
                                     <constraint firstAttribute="bottom" secondItem="ZFc-jN-Jev" secondAttribute="bottom" constant="13" id="TuW-WT-TEz"/>
                                     <constraint firstItem="ZFc-jN-Jev" firstAttribute="top" secondItem="T7T-jw-yDC" secondAttribute="top" id="Y6g-Zn-1Hq"/>
                                     <constraint firstItem="ZFc-jN-Jev" firstAttribute="leading" secondItem="j63-ar-E0d" secondAttribute="leading" constant="210" id="ZOl-ig-fgA"/>
                                     <constraint firstItem="BV1-ZZ-xO1" firstAttribute="leading" secondItem="j63-ar-E0d" secondAttribute="leading" constant="13" id="qO3-CU-3al"/>
-                                    <constraint firstItem="deH-IX-Re9" firstAttribute="baseline" secondItem="yBa-Lx-yio" secondAttribute="baseline" id="tXa-Xk-sHs"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7J-e7-O93">
@@ -542,7 +529,6 @@
                     <navigationItem key="navigationItem" id="XKP-Tl-HXG"/>
                     <connections>
                         <outlet property="categoryImg" destination="bVs-PN-SYT" id="WvP-Fh-V16"/>
-                        <outlet property="categoryLabel" destination="yBa-Lx-yio" id="DgG-WA-uyT"/>
                         <outlet property="firstChoice" destination="ZFc-jN-Jev" id="KYa-Fz-tBW"/>
                         <outlet property="firstSound" destination="73V-rC-vrj" id="zzr-xV-Z27"/>
                         <outlet property="secondChoice" destination="T7T-jw-yDC" id="8rY-uR-rgc"/>
@@ -608,7 +594,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coloring page" translatesAutoresizingMaskIntoConstraints="NO" id="IJY-ZH-KmV">
-                                <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                                <rect key="frame" x="-448" y="0.0" width="1792" height="828"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K61-TP-kC2">
                                 <rect key="frame" x="139" y="321" width="34" height="33"/>
@@ -698,7 +684,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8So-vk-Pci">
-                                <rect key="frame" x="15" y="20" width="55" height="41"/>
+                                <rect key="frame" x="-433" y="20" width="55" height="41"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="rhr-bR-3Yl"/>

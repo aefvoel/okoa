@@ -13,7 +13,6 @@ import CoreHaptics
 class QuizViewController: UIViewController {
 
     @IBOutlet weak var categoryImg: UIButton!
-    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var firstChoice: UIButton!
     @IBOutlet weak var secondChoice: UIButton!
     
@@ -35,8 +34,6 @@ class QuizViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        categoryLabel.text = labelFromSegue
         
         if let index = categoryArray.firstIndex(of: labelFromSegue){
             categoryArray.remove(at: index)
