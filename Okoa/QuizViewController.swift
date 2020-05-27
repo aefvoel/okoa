@@ -72,7 +72,13 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func btnTapSound(_ sender: UIButton) {
-        playHapticsAndSoundFile(named: "MyResources/\(sender.title(for: .normal) ?? "")")
+        let pronun = ["grape", "banana", "apple", "carrot", "broccoli"]
+        if pronun.contains(sender.title(for: .normal) ?? "") {
+            playSound(named: "MyResources/\(sender.title(for: .normal) ?? "")")
+        } else {
+            playHapticsAndSoundFile(named: "MyResources/\(sender.title(for: .normal) ?? "")")
+            
+        }
     }
     
     func randomQuestion() -> String {
@@ -170,6 +176,22 @@ extension QuizViewController {
                 
                 try engine.playPattern(from: URL(fileURLWithPath: path))
             }
+            
+        } catch {
+            print("An error occured playing \(filename): \(error).")
+        }
+    }
+    
+    func playSound(named filename: String) {
+        guard let url = Bundle.main.url(forResource: filename, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            guard let player = player else { return }
+            player.play()
             
         } catch {
             print("An error occured playing \(filename): \(error).")
