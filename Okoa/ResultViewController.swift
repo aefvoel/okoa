@@ -34,7 +34,7 @@ class ResultViewController: UIViewController {
     
 //        loadImage(named: imageName)
         imageResult.setImage(imageFromSegue, for: .normal)
-        resultNameLabel.text = imageName
+        resultNameLabel.text = imageName.capitalizingFirstLetter()
         createEngine()
     }
     
@@ -42,7 +42,7 @@ class ResultViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? QuizViewController {
             destination.imageFromSegue = imageFromSegue
-            destination.labelFromSegue = resultNameLabel.text
+            destination.labelFromSegue = imageName
             destination.categoryArray = categoryLabel
         }
     }
@@ -56,10 +56,10 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func shareBtnDidPressed(_ sender: Any) {
-        UIImageWriteToSavedPhotosAlbum(imageFromSegue, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
-//        let items = [imageResult.currentImage]
-//        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-//        present(ac, animated: true)
+//        UIImageWriteToSavedPhotosAlbum(imageFromSegue, self, #selector(imagesaved(_:didFinishSavingWithError:contextType:)), nil)
+        let items = [imageResult.currentImage]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
     }
     
     @IBAction func backArrowBtnDidPressed(_ sender: Any) {
@@ -67,27 +67,26 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func homeBtnDidPressed(_ sender: Any) {
-        
+        let alert = UIAlertController(title: "Alert", message: "Are you sure you want to go back home? Your progress will be lost.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            self.performSegue(withIdentifier: "to_menu", sender: self)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func imageResultDidPressed(_ sender: Any) {
-        playHapticsAndSoundFile(named: "MyResources/\(imageName)")
+        let pronun = ["grape", "banana", "apple", "carrot", "broccoli"]
+        if pronun.contains(imageName) {
+            playSound(named: "MyResources/\(imageName)")
+        } else {
+            playHapticsAndSoundFile(named: "MyResources/\(imageName)")
+        }
     }
     
     @IBAction func nextBtnDidPressed(_ sender: Any) {
         
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 extension ResultViewController {
@@ -170,6 +169,39 @@ extension ResultViewController {
             print("An error occured playing \(filename): \(error).")
         }
     }
+    
+    func playSound(named filename: String) {
+        guard let url = Bundle.main.url(forResource: filename, withExtension: "wav") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            guard let player = player else { return }
+            player.play()
+            
+        } catch {
+            print("An error occured playing \(filename): \(error).")
+        }
+    }
 }
 
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
 
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}
+
+extension UIView {
+    func asImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { rendererContext in
+            layer.render(in: rendererContext.cgContext)
+        }
+    }
+}

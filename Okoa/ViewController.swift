@@ -18,7 +18,12 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        performSegue(withIdentifier: "to_onboarding", sender: self)
+        if UserDefaults.standard.bool(forKey: "isLaunched") {
+            performSegue(withIdentifier: "to_menu", sender: self)
+        }
+        else {
+            performSegue(withIdentifier: "to_onboarding", sender: self)
+        }
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

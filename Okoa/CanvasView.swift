@@ -14,6 +14,8 @@ struct TouchPointAndColor  {
     var opacity: CGFloat?
     var points: [CGPoint]?
     
+
+    
     init(color: UIColor, points: [CGPoint]){
         self.color = color
         self.points = points
@@ -27,6 +29,11 @@ class CanvasView: UIView {
     var strokeWidth: CGFloat = 10.0
     var strokeColor: UIColor = .black
     var strokeOpacity:  CGFloat = 10.0
+    private var drawingPath: UIBezierPath?
+    private var widthRatio: CGFloat?
+    private var heightRatio: CGFloat?
+    private var resizeFrame: CGRect?
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
@@ -47,6 +54,31 @@ class CanvasView: UIView {
         }
     }
     
+    func originalTouch(touchPosition: CGPoint) -> CGPoint{
+        var xScale = resizeFrame!.width / widthRatio!
+        var yScale = resizeFrame!.height / heightRatio!
+        
+        var xTranslate = resizeFrame?.minX
+        var yTranslate = resizeFrame?.minY
+        
+        var newPoint = CGPoint(
+            x: (touchPosition.x / xScale) - xTranslate!,
+            y: (touchPosition.y / yScale) - yTranslate!
+        )
+        return newPoint
+    }
+    
+    
+    
+    func setDrawing(path: UIBezierPath,resizeFrame: CGRect,widthRatio: CGFloat,heighRatio: CGFloat){
+        self.drawingPath = path
+        self.resizeFrame = resizeFrame
+        self.widthRatio = widthRatio
+        self.heightRatio = heighRatio
+    }
+    
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         lines.append(TouchPointAndColor(color: UIColor(), points: [CGPoint]()))
     }
@@ -56,6 +88,16 @@ class CanvasView: UIView {
             return
         }
         
+//        if drawingPath!.contains(originalTouch(touchPosition: touch)){
+//            guard var lastPoint = lines.popLast() else{
+//                return
+//            }
+//            lastPoint.points?.append(touch)
+//            lastPoint.color = strokeColor
+//            lastPoint.width = strokeWidth
+//            lastPoint.opacity = strokeOpacity
+//            lines.append(lastPoint)
+//        }
         
         guard var lastPoint = lines.popLast() else{
             return
@@ -65,7 +107,10 @@ class CanvasView: UIView {
         lastPoint.width = strokeWidth
         lastPoint.opacity = strokeOpacity
         lines.append(lastPoint)
+        
         setNeedsDisplay()
+        
+
     }
     
     func clearDraw(){
